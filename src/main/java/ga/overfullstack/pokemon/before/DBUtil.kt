@@ -11,15 +11,6 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class DBUtil {
-
-  private object Powers : Table() {
-    val id = integer("id").autoIncrement()
-    val name = varchar("name", 50)
-    val power = varchar("power", 50)
-
-    override val primaryKey = PrimaryKey(id, name = "PK_Powers_ID")
-  }
-  
   companion object {
     private val INIT_DATA = listOf(
       "pikachu" to "static",
@@ -28,6 +19,7 @@ class DBUtil {
       "squirtle" to "torrent",
       "eevee" to "adaptability",
     )
+
     init {
       Database.connect("jdbc:h2:mem:regular;DB_CLOSE_DELAY=-1;", "org.h2.Driver")
       transaction {
@@ -38,11 +30,39 @@ class DBUtil {
         }
       }
     }
+
     @JvmStatic
-    fun queryPowers(pokemonList: List<Pokemon>): List<String> {
+    fun queryPokemonPowers(pokemonNames: List<String>): Map<String, String> {
       return transaction {
-        Powers.selectAll().andWhere { Powers.name inList pokemonList.map(Pokemon::name) }.map { it[Powers.power] }
+        Powers.selectAll()
+          .andWhere { Powers.name inList pokemonNames }
+          .associate { it[Powers.name] to it[Powers.power] }
       }
     }
+
+    @JvmStatic
+    fun batchInsertPokemonPowers(pokemonToPower: List<Pair<String, String>>) {
+      transaction {
+        Powers.batchInsert(pokemonToPower) { (pokemonName, power) ->
+          this[Powers.name] = pokemonName
+          this[Powers.power] = power
+        }
+      }
+    }
+
+    @JvmStatic
+    fun queryAllPokemonPowers(): Map<String, String> {
+      return transaction { 
+        Powers.selectAll().associate { it[Powers.name] to it[Powers.power] }
+      }
+    }
+  }
+
+  private object Powers : Table() {
+    val id = integer("id").autoIncrement()
+    val name = varchar("name", 50).index()
+    val power = varchar("power", 50)
+
+    override val primaryKey = PrimaryKey(id, name = "PK_Powers_ID")
   }
 }

@@ -12,17 +12,28 @@ import org.http4k.format.Moshi.auto
 
 class HttpUtil {
   companion object {
-    private val body = Body.auto<Results>().toLens()
-
     @JvmStatic
-    fun fetchPokemon(noOfPokemon: Int): List<Pokemon> {
+    fun fetchAllPokemon(limit: Int): List<String> {
+      val resultsLens = Body.auto<Results>().toLens()
       val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of("https://pokeapi.co")).then(JavaHttpClient())
-      val response: Response = pokemonApi(Request(Method.GET, "/api/v2/pokemon").query("limit", noOfPokemon.toString()))
-      return body(response).results
+      val response: Response = pokemonApi(Request(Method.GET, "/api/v2/pokemon").query("limit", limit.toString()))
+      return resultsLens(response).results.map { it.name }
+    }
+    
+    @JvmStatic
+    fun fetchPokemonPower(pokemonName: String): String {
+      val abilitiesLens = Body.auto<Abilities>().toLens()
+      val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of("https://pokeapi.co")).then(JavaHttpClient())
+      val response: Response = pokemonApi(Request(Method.GET, "/api/v2/pokemon/$pokemonName"))
+      return abilitiesLens(response).abilities.first().ability.name
     }
   }
+  private data class Pokemon(val name: String)
+
+  private data class Results(val results: List<Pokemon>)
+
+  private data class Ability(val name: String)
+
+  private data class AbilityWrapper(val ability: Ability)
+  private data class Abilities(val abilities: List<AbilityWrapper>)
 }
-
-data class Pokemon(val name: String)
-
-data class Results(val results: List<Pokemon>)
