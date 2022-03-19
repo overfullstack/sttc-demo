@@ -2,7 +2,6 @@
 
 package ga.overfullstack.pokemon.before
 
-import ga.overfullstack.pokemon.Pokemon
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.Table

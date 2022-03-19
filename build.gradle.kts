@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm")
-  kotlin("kapt")
   id("com.adarshr.test-logger") version "3.1.0"
   application
 }
@@ -15,18 +14,11 @@ repositories {
 }
 
 dependencies {
-  val immutablesVersion: String by project
-  kapt("org.immutables:value:$immutablesVersion")
-  compileOnly("org.immutables:builder:$immutablesVersion")
-  compileOnly("org.immutables:value-annotations:$immutablesVersion")
   val http4kVersion: String by project
   implementation("org.http4k:http4k-core:$http4kVersion")
   implementation("org.http4k:http4k-serverless-lambda:$http4kVersion")
   implementation("org.http4k:http4k-format-moshi:$http4kVersion")
-  implementation("com.squareup.moshi:moshi:1.13.0")
   implementation("org.slf4j:slf4j-api:1.7.36")
-  implementation("org.springframework:spring-beans:5.3.16")
-  implementation("org.springframework:spring-context:5.3.16")
   val exposedVersion: String by project
   implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
