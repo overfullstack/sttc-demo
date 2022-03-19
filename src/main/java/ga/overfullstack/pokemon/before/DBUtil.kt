@@ -41,19 +41,19 @@ class DBUtil {
     }
 
     @JvmStatic
+    fun queryAllPokemonPowers(): Map<String, String> {
+      return transaction {
+        Powers.selectAll().associate { it[Powers.name] to it[Powers.power] }
+      }
+    }
+
+    @JvmStatic
     fun batchInsertPokemonPowers(pokemonToPower: List<Pair<String, String>>) {
       transaction {
         Powers.batchInsert(pokemonToPower) { (pokemonName, power) ->
           this[Powers.name] = pokemonName
           this[Powers.power] = power
         }
-      }
-    }
-
-    @JvmStatic
-    fun queryAllPokemonPowers(): Map<String, String> {
-      return transaction { 
-        Powers.selectAll().associate { it[Powers.name] to it[Powers.power] }
       }
     }
   }

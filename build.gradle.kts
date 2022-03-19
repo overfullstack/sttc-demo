@@ -26,10 +26,11 @@ dependencies {
   implementation("com.h2database:h2:2.1.210")
 
   runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.0")
-  
-  testImplementation("org.powermock:powermock-module-junit4:+")
-  testImplementation("org.powermock:powermock-api-mockito2:+")
-  testImplementation(platform("org.junit:junit-bom:+"))
+
+  testImplementation("org.mockito:mockito-inline:4.3.1")
+//  testImplementation("org.powermock:powermock-module-junit4:+")
+//  testImplementation("org.powermock:powermock-api-mockito2:+")
+  testImplementation(platform("org.junit:junit-bom:5.8.2"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }

@@ -9,10 +9,14 @@ public class PokemonDemo {
   private static final int POKEMON_LIMIT_TO_FETCH = 5;
 
   public static void main(String[] args) {
+    serve();
+  }
+
+  static void serve() {
     // Fetch all Pokémon
     final var pokemonNames = HttpUtil.fetchAllPokemon(POKEMON_LIMIT_TO_FETCH);
     logger.info("Pokémon fetched: {}", pokemonNames);
-    
+
     // Find DB match for fetched Pokémon.
     final var pokemonNameToPower = DBUtil.queryPokemonPowers(pokemonNames);
     logger.info("{} Matching Pokémon with Powers in DB: {}", pokemonNameToPower.size(), pokemonNameToPower);
@@ -20,8 +24,8 @@ public class PokemonDemo {
     // Fetch powers for missing Pokémon.
     final var missingPokemonNames = pokemonNames.stream()
         .filter(key -> !pokemonNameToPower.containsKey(key)).toList();
-    logger.info("{} Fetching for missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
-    
+    logger.info("Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
+
     // Insert new fetched Pokémon into the DB.
     final var newPokemonToInsert = missingPokemonNames.stream()
         .map(pokemonName -> new Pair<>(pokemonName, HttpUtil.fetchPokemonPower(pokemonName))).toList();
