@@ -25,7 +25,7 @@ dependencies {
   implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
   implementation("com.h2database:h2:2.1.210")
 
-  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.0")
+  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2")
 
   testImplementation("org.mockito:mockito-inline:4.3.1")
 //  testImplementation("org.powermock:powermock-module-junit4:+")
