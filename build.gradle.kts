@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm")
-  id("com.adarshr.test-logger") version "3.1.0"
+  id("com.adarshr.test-logger") version "3.2.0"
   application
 }
 
@@ -23,12 +23,12 @@ dependencies {
   implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
-  implementation("org.postgresql:postgresql:42.2.2")
-  implementation("com.h2database:h2:2.1.210")
+  implementation("org.postgresql:postgresql:42.3.5")
+  implementation("com.h2database:h2:2.1.212")
 
-  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.1")
+  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2")
 
-  testImplementation("org.mockito:mockito-inline:4.3.1")
+  testImplementation("org.mockito:mockito-inline:4.5.1")
 //  testImplementation("org.powermock:powermock-module-junit4:+")
 //  testImplementation("org.powermock:powermock-api-mockito2:+")
   testImplementation(platform("org.junit:junit-bom:5.8.2"))
