@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment=":sparkles: Fetch missing Pokémon&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ga/overfullstack/pokemon/before/PokemonDemoTest.java" afterDir="false" />
+    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment=":sparkles: Add some dummy tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/renovate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/DBUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/DBUtil.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/HttpUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/HttpUtil.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/PokemonDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/PokemonDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ga/overfullstack/pokemon/before/PokemonDemoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ga/overfullstack/pokemon/before/PokemonDemoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +82,16 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.exposed/exposed-core/0.37.3/f636fb0d52353c8f1c130c007f3177d1e0fc6c19/exposed-core-0.37.3-sources.jar!/org/jetbrains/exposed/sql/Queries.kt" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.exposed/exposed-core/0.37.3/f636fb0d52353c8f1c130c007f3177d1e0fc6c19/exposed-core-0.37.3-sources.jar!/org/jetbrains/exposed/sql/ResultRow.kt" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.6.20-RC/e81e108a2817747538df29b32a151db38e5da5a2/kotlin-stdlib-common-1.6.20-RC-sources.jar!/kotlin/util/Tuples.kt" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.github/workflows/build.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/build.gradle.kts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker-compose.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/gradle.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/settings.gradle.kts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/DBUtil.kt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ga/overfullstack/pokemon/before/PokemonDemo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/ga/overfullstack/pokemon/before/PokemonDemoTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,27 +114,27 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/gopala.akshintala/code-clones/my-github/ppp-demo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "spring.configuration.checksum": "2ad32cdb8b4aadcad1f521e03da44d08"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gopala.akshintala/code-clones/my-github/ppp-demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2ad32cdb8b4aadcad1f521e03da44d08&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="master" />
@@ -156,8 +169,8 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.PokemonDemoTest.queryAllPokemonPowers">
-    <configuration name="ga.overfullstack.pokemon.before.PokemonDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Gradle.PokemonDemoTest.play">
+    <configuration name="PokemonDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ga.overfullstack.pokemon.before.PokemonDemo" />
       <module name="ppp-demo.main" />
       <extension name="coverage">
@@ -170,7 +183,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PokemonDemoTest.queryAllPokemonPowers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PokemonDemoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -183,7 +196,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.before.PokemonDemoTest.queryAllPokemonPowers&quot;" />
+            <option value="&quot;ga.overfullstack.pokemon.before.PokemonDemoTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,7 +206,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PokemonDemoTest.serve" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PokemonDemoTest.fetchPokemonPower" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,7 +219,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.before.PokemonDemoTest.serve&quot;" />
+            <option value="&quot;ga.overfullstack.pokemon.before.PokemonDemoTest.fetchPokemonPower&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PokemonDemoTest.play" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ga.overfullstack.pokemon.before.PokemonDemoTest.play&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -237,56 +273,22 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ppp-demo [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ppp-demo [clean check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-            <option value="check" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PokemonDemoTest.queryAllPokemonPowers" />
-        <item itemvalue="Gradle.PokemonDemoTest.serve" />
-        <item itemvalue="Gradle.ppp-demo [build]" />
-        <item itemvalue="Gradle.ppp-demo [clean check]" />
-        <item itemvalue="Application.ga.overfullstack.pokemon.before.PokemonDemo" />
+        <item itemvalue="Gradle.PokemonDemoTest.play" />
+        <item itemvalue="Gradle.PokemonDemoTest.fetchPokemonPower" />
+        <item itemvalue="Gradle.PokemonDemoTest" />
+        <item itemvalue="Application.PokemonDemo" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -301,7 +303,18 @@
       <workItem from="1647605314286" duration="8606000" />
       <workItem from="1647660237959" duration="6733000" />
       <workItem from="1647679524690" duration="4433000" />
-      <workItem from="1647689062630" duration="2368000" />
+      <workItem from="1647689062630" duration="3454000" />
+      <workItem from="1648481413625" duration="1793000" />
+      <workItem from="1648529746124" duration="3024000" />
+      <workItem from="1648565743979" duration="7911000" />
+      <workItem from="1649591258199" duration="6685000" />
+      <workItem from="1649691965357" duration="1042000" />
+      <workItem from="1650000741001" duration="38000" />
+      <workItem from="1650000786068" duration="249000" />
+      <workItem from="1650002635000" duration="3208000" />
+      <workItem from="1650184817817" duration="155000" />
+      <workItem from="1650536210415" duration="50000" />
+      <workItem from="1652631208213" duration="410000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1647615512976</created>
@@ -331,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647682725243</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=":sparkles: Add some dummy tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;">
+      <created>1647694280716</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647694280717</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,10 +375,14 @@
     <MESSAGE value="Migrate to http4k for Http" />
     <MESSAGE value="Migrate to http4k for Http&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
     <MESSAGE value=":sparkles: Fetch missing Pokémon&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: Fetch missing Pokémon&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
+    <MESSAGE value=":sparkles: Add some dummy tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: Add some dummy tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ppp_demo$PokemonDemoTest_fetchPokemonPower.ic" NAME="PokemonDemoTest.fetchPokemonPower Coverage Results" MODIFIED="1648481558046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -23,9 +23,10 @@ dependencies {
   implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+  implementation("org.postgresql:postgresql:42.2.2")
   implementation("com.h2database:h2:2.1.210")
 
-  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.0")
+  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.1")
 
   testImplementation("org.mockito:mockito-inline:4.3.1")
 //  testImplementation("org.powermock:powermock-module-junit4:+")
@@ -47,22 +48,7 @@ tasks {
       jvmTarget = JavaVersion.VERSION_17.toString()
     }
   }
-}
-
-testlogger {
-  setTheme("mocha")
-  showExceptions = true
-  showStackTraces = false
-  showFullStackTraces = false
-  showCauses = false
-  slowThreshold = 2000
-  showSummary = true
-  showSimpleNames = true
-  showPassed = true
-  showSkipped = true
-  showFailed = true
-  showStandardStreams = false
-  showPassedStandardStreams = false
-  showSkippedStandardStreams = false
-  showFailedStandardStreams = false
+  testlogger {
+    theme = com.adarshr.gradle.testlogger.theme.ThemeType.MOCHA_PARALLEL
+  }
 }
