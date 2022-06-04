@@ -1,23 +1,29 @@
 package ga.overfullstack.pokemon.before;
 
+import java.util.Map;
+import java.util.Random;
 import kotlin.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Random;
+
+import static ga.overfullstack.pokemon.before.AppKt.POKEMON_LIMIT_TO_FETCH;
+import static ga.overfullstack.pokemon.before.AppKt.POKEMON_OFFSET_TO_FETCH;
 
 public class PokemonDemo {
   private static final Logger logger = LoggerFactory.getLogger(PokemonDemo.class);
-  private static final Random random = new Random();
-  private static final int POKEMON_OFFSET_TO_FETCH = random.ints(1, 100).findFirst().orElse(1);
-  private static final int POKEMON_LIMIT_TO_FETCH = random.ints(1, 6).findFirst().orElse(1);
 
-  public static void main(String[] args) {
-    play();
+  private PokemonDemo() {
   }
 
-  static void play() {
+  public static void main(String[] args) {
+    play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
+  }
+
+  static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
+    validate(pokemonOffsetToFetch, pokemonLimitToFetch);
+    
     // Fetch all Pokémon
-    final var pokemonNames = HttpUtil.fetchAllPokemon(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
+    final var pokemonNames = HttpUtil.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
     logger.info("Pokémon fetched: {}", pokemonNames);
 
     // Find DB match for fetched Pokémon.
@@ -37,6 +43,13 @@ public class PokemonDemo {
     // Fetch all Pokémon in DB.
     final var allPokemonWithPowers = DBUtil.queryAllPokemonPowers();
     logger.info("{} Pokémon with Powers in DB: {}", allPokemonWithPowers.size(), allPokemonWithPowers);
+    return allPokemonWithPowers;
+  }
+  
+  static void validate(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
+    if (pokemonOffsetToFetch < 0 || pokemonLimitToFetch < 0 || pokemonLimitToFetch > 10) {
+      throw new IllegalArgumentException("Invalid offset or limit : offset=" + pokemonOffsetToFetch + ", limit=" + pokemonLimitToFetch);
+    }
   }
 
 }

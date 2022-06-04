@@ -28,12 +28,13 @@ dependencies {
 
   runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2")
 
-  testImplementation("org.mockito:mockito-inline:4.6.0")
-//  testImplementation("org.powermock:powermock-module-junit4:+")
-//  testImplementation("org.powermock:powermock-api-mockito2:+")
+  val powerMockVersion = "2.0.9"
+  testImplementation("org.powermock:powermock-module-junit4:$powerMockVersion")
+  testImplementation("org.powermock:powermock-api-mockito2:$powerMockVersion")
   testImplementation(platform("org.junit:junit-bom:5.8.2"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+  testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17

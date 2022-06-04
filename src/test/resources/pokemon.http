@@ -1,0 +1,2 @@
+POST http://localhost:7000/?offset=0&limit=10
+Accept: application/json
