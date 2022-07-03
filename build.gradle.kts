@@ -47,6 +47,7 @@ tasks {
   withType<KotlinCompile> {
     kotlinOptions {
       jvmTarget = JavaVersion.VERSION_17.toString()
+      freeCompilerArgs = listOf("-Xuse-k2")
     }
   }
   testlogger {

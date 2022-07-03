@@ -1,25 +1,26 @@
 package ga.overfullstack.pokemon.before;
 
 import java.util.Map;
-import java.util.Random;
+import ga.overfullstack.pokemon.DBUtil;
+import ga.overfullstack.pokemon.HttpUtil;
 import kotlin.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static ga.overfullstack.pokemon.before.AppKt.POKEMON_LIMIT_TO_FETCH;
-import static ga.overfullstack.pokemon.before.AppKt.POKEMON_OFFSET_TO_FETCH;
+import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
+import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
 
-public class PokemonDemo {
-  private static final Logger logger = LoggerFactory.getLogger(PokemonDemo.class);
+public class PokemonCollector {
+  private static final Logger logger = LoggerFactory.getLogger(PokemonCollector.class);
 
-  private PokemonDemo() {
+  private PokemonCollector() {
   }
 
   public static void main(String[] args) {
     play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
   }
 
-  static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
+  public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
     
     // Fetch all Pokémon
@@ -40,7 +41,7 @@ public class PokemonDemo {
     // Insert new fetched Pokémon into the DB.
     DBUtil.batchInsertPokemonPowers(newPokemonToInsert);
     
-    // Fetch all Pokémon in DB.
+    // Fetch all collected Pokémon in DB.
     final var allPokemonWithPowers = DBUtil.queryAllPokemonPowers();
     logger.info("{} Pokémon with Powers in DB: {}", allPokemonWithPowers.size(), allPokemonWithPowers);
     return allPokemonWithPowers;

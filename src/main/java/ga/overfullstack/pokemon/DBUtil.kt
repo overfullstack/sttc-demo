@@ -1,6 +1,6 @@
 @file:JvmName("DBUtil")
 
-package ga.overfullstack.pokemon.before
+package ga.overfullstack.pokemon
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils

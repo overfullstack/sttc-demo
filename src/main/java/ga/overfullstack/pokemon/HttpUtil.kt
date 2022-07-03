@@ -1,4 +1,4 @@
-package ga.overfullstack.pokemon.before
+package ga.overfullstack.pokemon
 
 import org.http4k.client.JavaHttpClient
 import org.http4k.core.Body
