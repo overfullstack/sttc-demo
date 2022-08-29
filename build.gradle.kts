@@ -23,7 +23,7 @@ dependencies {
   implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
-  implementation("org.postgresql:postgresql:42.3.6")
+  implementation("org.postgresql:postgresql:42.5.0")
   implementation("com.h2database:h2:2.1.212")
 
   runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2")
@@ -31,7 +31,7 @@ dependencies {
   val powerMockVersion = "2.0.9"
   testImplementation("org.powermock:powermock-module-junit4:$powerMockVersion")
   testImplementation("org.powermock:powermock-api-mockito2:$powerMockVersion")
-  testImplementation(platform("org.junit:junit-bom:5.8.2"))
+  testImplementation(platform("org.junit:junit-bom:5.9.0"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
