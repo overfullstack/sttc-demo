@@ -18,15 +18,15 @@ dependencies {
   implementation("org.http4k:http4k-core:$http4kVersion")
   implementation("org.http4k:http4k-serverless-lambda:$http4kVersion")
   implementation("org.http4k:http4k-format-moshi:$http4kVersion")
-  implementation("org.slf4j:slf4j-api:1.7.36")
+  implementation("org.slf4j:slf4j-api:2.0.0")
   val exposedVersion: String by project
   implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
   implementation("org.postgresql:postgresql:42.5.0")
-  implementation("com.h2database:h2:2.1.212")
+  implementation("com.h2database:h2:2.1.214")
 
-  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2")
+  runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.18.0")
 
   val powerMockVersion = "2.0.9"
   testImplementation("org.powermock:powermock-module-junit4:$powerMockVersion")
@@ -37,7 +37,7 @@ dependencies {
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 tasks {
   test {
@@ -46,7 +46,7 @@ tasks {
   }
   withType<KotlinCompile> {
     kotlinOptions {
-      jvmTarget = JavaVersion.VERSION_17.toString()
+      jvmTarget = JavaVersion.VERSION_11.toString()
       freeCompilerArgs = listOf("-Xuse-k2")
     }
   }

@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
 import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
@@ -42,10 +43,10 @@ public class PokemonCollector {
 
     // Fetch powers for missing Pokémon.
     final var missingPokemonNames = pokemonNames.stream()
-        .filter(key -> !existingPokemonNameToPower.containsKey(key)).toList();
+        .filter(key -> !existingPokemonNameToPower.containsKey(key)).collect(Collectors.toList());
     logger.info("Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
     final var newPokemonToInsert = missingPokemonNames.stream()
-        .map(pokemonName -> new Pair<>(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName))).toList();
+        .map(pokemonName -> new Pair<>(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName))).collect(Collectors.toList());
     
     // Insert new fetched Pokémon into the DB.
     pokemonDao.batchInsertPokemonPowers(newPokemonToInsert);

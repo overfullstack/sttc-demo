@@ -9,5 +9,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = "ppp-demo"
+rootProject.name = "sttc-demo"
 

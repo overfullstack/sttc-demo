@@ -6,10 +6,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.powermock.api.mockito.PowerMockito.when;
 
-import java.util.List;
-import java.util.Map;
 import ga.overfullstack.pokemon.DBUtil;
 import ga.overfullstack.pokemon.HttpUtil;
+import java.util.List;
+import java.util.Map;
 import kotlin.Pair;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,8 +48,9 @@ public class PokemonCollectorTest {
     when(HttpUtil.fetchPokemonPower("pokemon2")).thenAnswer(ignore -> "power2");
 
     PokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
-    
+
     PowerMockito.verifyStatic(DBUtil.class);
     DBUtil.batchInsertPokemonPowers(List.of(new Pair<>("pokemon2", "power2")));
   }
+
 }

@@ -1,6 +1,7 @@
 package ga.overfullstack.pokemon.before;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 import ga.overfullstack.pokemon.DBUtil;
 import ga.overfullstack.pokemon.HttpUtil;
 import kotlin.Pair;
@@ -36,10 +37,10 @@ public class PokemonCollector {
 
     // Fetch powers for missing Pokémon (fetchedPokemonNames - existingPokemonNames).
     final var missingPokemonNames = fetchedPokemonNames.stream()
-        .filter(key -> !existingPokemonNameToPower.containsKey(key)).toList();
+        .filter(key -> !existingPokemonNameToPower.containsKey(key)).collect(Collectors.toList());
     logger.info("Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
     final var newPokemonToInsert = missingPokemonNames.stream()
-        .map(pokemonName -> new Pair<>(pokemonName, HttpUtil.fetchPokemonPower(pokemonName))).toList();
+        .map(pokemonName -> new Pair<>(pokemonName, HttpUtil.fetchPokemonPower(pokemonName))).collect(Collectors.toList());
 
     // Insert new fetched Pokémon into the DB.
     DBUtil.batchInsertPokemonPowers(newPokemonToInsert);
