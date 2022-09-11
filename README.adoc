@@ -1,0 +1,5 @@
+= Score the Tendulkar Test Coverage
+
+https://speakerdeck.com/gopalakshintala/score-the-tendulkar-test-coverage[Slides]
+
+image::images/sttc-poster.png[Poster]

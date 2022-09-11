@@ -11,6 +11,7 @@ import ga.overfullstack.pokemon.HttpUtil;
 import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +27,6 @@ import org.slf4j.LoggerFactory;
 @PrepareForTest({DBUtil.class, HttpUtil.class, LoggerFactory.class})
 @SuppressStaticInitializationFor("ga.overfullstack.pokemon.DBUtil")
 public class PokemonCollectorTest {
-
   @Before
   public void setUp() {
     PowerMockito.mockStatic(DBUtil.class);

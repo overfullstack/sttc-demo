@@ -15,12 +15,6 @@ public class PokemonCollector {
   private final PokemonHttp pokemonHttp;
   private final Logger logger;
 
-  public PokemonCollector(PokemonDao pokemonDao, PokemonHttp pokemonHttp, Logger logger) {
-    this.pokemonDao = pokemonDao;
-    this.pokemonHttp = pokemonHttp;
-    this.logger = logger;
-  }
-
   public static void main(String[] args) {
     final var pokemonCollector = new PokemonCollector(
         new PokemonDao() {},
@@ -28,6 +22,12 @@ public class PokemonCollector {
         LoggerFactory.getLogger(PokemonCollector.class)
     );
     pokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
+  }
+  
+  public PokemonCollector(PokemonDao pokemonDao, PokemonHttp pokemonHttp, Logger logger) {
+    this.pokemonDao = pokemonDao;
+    this.pokemonHttp = pokemonHttp;
+    this.logger = logger;
   }
 
   public Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
@@ -56,7 +56,12 @@ public class PokemonCollector {
     logger.info("{} Pokémon with Powers in DB: {}", allPokemonWithPowers.size(), allPokemonWithPowers);
     return allPokemonWithPowers;
   }
-  
+
+  /**
+   * No side-effects, so no need to create Validator class for this function
+   * @param pokemonOffsetToFetch
+   * @param pokemonLimitToFetch
+   */
   static void validate(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     if (pokemonOffsetToFetch < 0 || pokemonLimitToFetch < 0 || pokemonLimitToFetch > 10) {
       throw new IllegalArgumentException("Invalid offset or limit : offset=" + pokemonOffsetToFetch + ", limit=" + pokemonLimitToFetch);
