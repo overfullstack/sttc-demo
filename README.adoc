@@ -1,5 +1,19 @@
 = Score the Tendulkar Test Coverage
+Gopal S Akshintala <gopalakshintala@gmail.com>
+:imagesdir: images
+:figure-caption!:
 
+[.lead]
 https://speakerdeck.com/gopalakshintala/score-the-tendulkar-test-coverage[Slides]
 
-image::images/sttc-poster.png[Poster]
+image::sttc-poster.png[Poster]
+
+It's a simple gradle project, so just run this command after clone:
+
+[source,bash]
+----
+./gradlew clean build
+----
+
+.Functionality
+image::pokemon-collector.png[Functionality, align="center"]
