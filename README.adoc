@@ -4,7 +4,9 @@ Gopal S Akshintala <gopalakshintala@gmail.com>
 :figure-caption!:
 
 [.lead]
-https://speakerdeck.com/gopalakshintala/score-the-tendulkar-test-coverage[Slides]
+https://overfullstack.ga/posts/score-the-tendulkar-test-coverage[Detailed Blog Post]
+
+https://speakerdeck.com/gopalakshintala/score-the-tendulkar-test-coverage[Slide deck]
 
 image::sttc-poster.png[Poster]
 
