@@ -1,8 +1,10 @@
+import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep.XML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm")
   id("com.adarshr.test-logger") version "3.2.0"
+  id("com.diffplug.spotless") version "6.11.0"
   application
 }
 
@@ -18,7 +20,7 @@ dependencies {
   implementation("org.http4k:http4k-core:$http4kVersion")
   implementation("org.http4k:http4k-serverless-lambda:$http4kVersion")
   implementation("org.http4k:http4k-format-moshi:$http4kVersion")
-  implementation("org.slf4j:slf4j-api:2.0.0")
+  implementation("org.slf4j:slf4j-api:2.0.1")
   val exposedVersion: String by project
   implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
@@ -52,5 +54,42 @@ tasks {
   }
   testlogger {
     theme = com.adarshr.gradle.testlogger.theme.ThemeType.MOCHA_PARALLEL
+  }
+}
+spotless {
+  kotlin {
+    target("src/main/java/**/*.kt", "src/test/java/**/*.kt")
+    targetExclude("$buildDir/generated/**/*.*")
+    ktlint()
+      .setUseExperimental(true)
+      .editorConfigOverride(mapOf("indent_size" to "2", "continuation_indent_size" to "2"))
+  }
+  kotlinGradle {
+    target("*.gradle.kts")
+    ktlint()
+      .setUseExperimental(true)
+      .editorConfigOverride(mapOf("indent_size" to "2", "continuation_indent_size" to "2"))
+  }
+  java {
+    toggleOffOn()
+    target("src/main/java/**/*.java", "src/test/java/**/*.java")
+    targetExclude("$buildDir/generated/**/*.*")
+    importOrder()
+    removeUnusedImports()
+    googleJavaFormat()
+    trimTrailingWhitespace()
+    indentWithSpaces(2)
+    endWithNewline()
+  }
+  format("xml") {
+    targetExclude("pom.xml")
+    target("*.xml")
+    eclipseWtp(XML)
+  }
+  format("documentation") {
+    target("*.md", "*.adoc")
+    trimTrailingWhitespace()
+    indentWithSpaces(2)
+    endWithNewline()
   }
 }

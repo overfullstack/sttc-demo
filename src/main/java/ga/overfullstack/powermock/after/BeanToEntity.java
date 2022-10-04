@@ -7,7 +7,7 @@ import ga.overfullstack.powermock.PokemonEntity;
 
 class BeanToEntity {
   private final EntityAccessor entityAccessor;
-  
+
   public BeanToEntity(EntityAccessor entityAccessor) {
     this.entityAccessor = entityAccessor;
   }

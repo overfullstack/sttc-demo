@@ -17,7 +17,7 @@ class DBUtil {
       "bulbasaur" to "chlorophyll",
       "charmeleon" to "blaze",
       "squirtle" to "torrent",
-      "eevee" to "adaptability",
+      "eevee" to "adaptability"
     )
 
     init {

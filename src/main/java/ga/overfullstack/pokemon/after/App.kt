@@ -25,12 +25,12 @@ fun main() {
   val app: HttpHandler = { request ->
     val resultLens = Body.auto<Map<String, String>>().toLens()
     val pokemonCollector = PokemonCollector(object : PokemonDao {}, object : PokemonHttp {}, LoggerFactory.getLogger(PokemonCollector::class.java))
-        Response (Status.OK).with(
-        resultLens of pokemonCollector.play(
-          request.query("offset")?.toInt() ?: POKEMON_OFFSET_TO_FETCH,
-          request.query("limit")?.toInt() ?: POKEMON_LIMIT_TO_FETCH
-        )
+    Response(Status.OK).with(
+      resultLens of pokemonCollector.play(
+        request.query("offset")?.toInt() ?: POKEMON_OFFSET_TO_FETCH,
+        request.query("limit")?.toInt() ?: POKEMON_LIMIT_TO_FETCH
       )
+    )
   }
   app.asServer(SunHttp(7000)).start()
 }

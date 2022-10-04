@@ -7,6 +7,7 @@ interface PokemonHttp {
   default List<String> fetchAllPokemon(int offset, int limit) {
     return HttpUtil.fetchAllPokemon(offset, limit);
   }
+
   default String fetchPokemonPower(String pokemonName) {
     return HttpUtil.fetchPokemonPower(pokemonName);
   }

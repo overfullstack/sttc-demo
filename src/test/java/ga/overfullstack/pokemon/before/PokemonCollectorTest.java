@@ -11,7 +11,6 @@ import ga.overfullstack.pokemon.HttpUtil;
 import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +31,8 @@ public class PokemonCollectorTest {
     PowerMockito.mockStatic(DBUtil.class);
     PowerMockito.mockStatic(HttpUtil.class);
     PowerMockito.mockStatic(LoggerFactory.class);
-    when(LoggerFactory.getLogger(any(Class.class))).thenAnswer(ignore -> PowerMockito.mock(Logger.class));
+    when(LoggerFactory.getLogger(any(Class.class)))
+        .thenAnswer(ignore -> PowerMockito.mock(Logger.class));
     MockitoAnnotations.initMocks(this);
   }
 
@@ -40,9 +40,10 @@ public class PokemonCollectorTest {
   public void play() {
     final var pokemonFromNetworkFake = List.of("pokemon1", "pokemon2", "pokemon3");
     when(HttpUtil.fetchAllPokemon(anyInt(), anyInt())).thenAnswer(ignore -> pokemonFromNetworkFake);
-    final var pokemonWithPowerFromDBFake = Map.of(
-        "pokemon1", "power1",
-        "pokemon3", "power3");
+    final var pokemonWithPowerFromDBFake =
+        Map.of(
+            "pokemon1", "power1",
+            "pokemon3", "power3");
     when(DBUtil.queryPokemonPowers(pokemonFromNetworkFake))
         .thenAnswer(ignore -> pokemonWithPowerFromDBFake);
     when(HttpUtil.fetchPokemonPower("pokemon2")).thenAnswer(ignore -> "power2");
@@ -52,5 +53,4 @@ public class PokemonCollectorTest {
     PowerMockito.verifyStatic(DBUtil.class);
     DBUtil.batchInsertPokemonPowers(List.of(new Pair<>("pokemon2", "power2")));
   }
-
 }
