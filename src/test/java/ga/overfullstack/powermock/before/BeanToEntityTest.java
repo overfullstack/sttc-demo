@@ -16,11 +16,18 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @PrepareForTest({EntityLoader.class})
 public class BeanToEntityTest {
 
+  /**
+   * This test achieves 100% coverage without testing anything
+   * This doesn't test the behavior which is mapping fields from `pokemonBean` to `pokemonEntity`
+   * Instead, it returns a Mock on `loadNew`, does nothing on `put`, and asserts on the same Mock to make the test pass 
+   */
   @Test
-  public void toEntity() throws Exception {
-    // 👹 Return a Mock entity
+  public void toEntity() {
+    // 👹 Return a Mock entity on `loadNew`
     final var mockPokemonEntity = PowerMockito.mock(PokemonEntity.class);
     PowerMockito.when(EntityLoader.loadNew(PokemonEntity.class)).thenReturn(mockPokemonEntity);
+
+    // 👹 Do Nothing on `put`
     PowerMockito.doNothing().when(mockPokemonEntity).put(anyString(), anyString());
 
     final var pokemonBean = new Pokemon("mockPokemon", "mockPower");

@@ -10,6 +10,7 @@ public class PokemonEntity implements Entity {
     // Dummy, Do Nothing
   }
 
+  // Dummy, assume it's the DB
   private final Map<String, String> data = new HashMap<>();
 
   @Override

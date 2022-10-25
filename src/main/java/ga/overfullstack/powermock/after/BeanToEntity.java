@@ -1,7 +1,5 @@
 package ga.overfullstack.powermock.after;
 
-import ga.overfullstack.powermock.Entity;
-import ga.overfullstack.powermock.EntityLoader;
 import ga.overfullstack.powermock.Pokemon;
 import ga.overfullstack.powermock.PokemonEntity;
 
@@ -18,18 +16,13 @@ class BeanToEntity {
     entityAccessor.put(pokemonEntity, "power", pokemon.getPower());
     return pokemonEntity;
   }
-}
 
-interface EntityAccessor {
-  default <T extends Entity> T loadNew(Class<T> type) {
-    return EntityLoader.loadNew(type);
-  }
-
-  default void put(Entity entity, String field, String value) {
-    entity.put(field, value);
-  }
-
-  default String get(Entity entity, String field) {
-    return entity.get(field);
+  public static void main(String[] args) {
+    final var entityAccessor = new EntityAccessor() {};
+    final var beanToEntity = new BeanToEntity(entityAccessor);
+    final var pokemonBean = new Pokemon("pikachu", "static");
+    final var pokemonEntity = beanToEntity.toEntity(pokemonBean);
+    System.out.println(pokemonEntity);
   }
 }
+

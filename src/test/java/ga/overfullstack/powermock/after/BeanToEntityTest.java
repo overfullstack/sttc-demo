@@ -13,31 +13,16 @@ class BeanToEntityTest {
 
   @Test
   void toEntity() {
-    final var entityAccessorFake = new EntityAccessorFake() {};
+    final var entityAccessorFake = new EntityAccessorFake();
+    // 💉 Inject the fake adapter instance
     final var beanToEntity = new BeanToEntity(entityAccessorFake);
+    // Given
     final var pokemonBean = new Pokemon("mockPokemon", "mockPower");
+    // When
     final var pokemonEntity = beanToEntity.toEntity(pokemonBean);
+    // Then
     Assertions.assertEquals(entityAccessorFake.get(pokemonEntity, "name"), pokemonBean.getName());
     Assertions.assertEquals(entityAccessorFake.get(pokemonEntity, "power"), pokemonBean.getPower());
   }
 }
 
-interface EntityAccessorFake extends EntityAccessor {
-
-  Map<Pair<? extends Entity, String>, String> cache = new HashMap<>();
-
-  @Override
-  default <T extends Entity> T loadNew(Class<T> type) {
-    return Mockito.mock(type);
-  }
-
-  @Override
-  default void put(Entity entity, String field, String value) {
-    cache.put(new Pair<>(entity, field), value);
-  }
-
-  @Override
-  default String get(Entity entity, String field) {
-    return cache.get(new Pair<>(entity, field));
-  }
-}
