@@ -3,7 +3,7 @@ enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
   versionCatalogs {
     create("libs") {
-      from(files("libs.versions.toml"))
+      from(files("../libs.versions.toml"))
     }
   }
 
@@ -12,7 +12,3 @@ dependencyResolutionManagement {
     gradlePluginPortal()
   }
 }
-
-rootProject.name = "sttc-demo"
-include("legacy")
-include("demo")
