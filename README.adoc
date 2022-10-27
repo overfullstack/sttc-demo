@@ -10,6 +10,18 @@ https://speakerdeck.com/gopalakshintala/score-the-tendulkar-test-coverage[Slide 
 
 image::sttc-poster.png[Poster]
 
+== Functionality
+[.lead]
+This figure depicts what this sample app does:
+
+image::pokemon-collector.png[Functionality, align="center"]
+
+. Fetch Pokémon info from the store with HTTP call
+. Query Pokémon present in the DB and compare them with the fetched ones from the store
+. If there is a diff found, insert the new Pokémon into the DB
+
+== See in Action
+
 It's a simple gradle project, so just run this command after clone:
 
 [source,bash]
@@ -17,5 +29,11 @@ It's a simple gradle project, so just run this command after clone:
 ./gradlew clean build
 ----
 
-.Functionality
-image::pokemon-collector.png[Functionality, align="center"]
+Install Docker and run this command to get the Postgresql DB up
+
+[source,bash]
+----
+docker compose up
+----
+
+Run the main method from link:demo/src/main/java/ga/overfullstack/pokemon/after/App.kt[App.kt] and see it in action with link:demo/src/test/resources/pokemon.http[pokemon.http]
