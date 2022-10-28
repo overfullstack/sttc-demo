@@ -1,0 +1,4 @@
+= Legacy module
+Gopal S Akshintala <gopalakshintala@gmail.com>
+
+Assume files in this module are Legacy and you don't have control over redesigning or refactoring them

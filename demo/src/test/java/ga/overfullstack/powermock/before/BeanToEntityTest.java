@@ -2,9 +2,9 @@ package ga.overfullstack.powermock.before;
 
 import static org.junit.Assert.assertEquals;
 
+import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.EntityLoader;
 import ga.overfullstack.powermock.Pokemon;
-import ga.overfullstack.powermock.PowerEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
@@ -35,8 +35,8 @@ public class BeanToEntityTest {
   public void toEntity() {
     PowerMockito.mockStatic(EntityLoader.class);
     // 👹 Return a Mock entity on `loadNew`
-    final var mockPokemonEntity = PowerMockito.mock(PowerEntity.class);
-    PowerMockito.when(EntityLoader.loadNew(PowerEntity.class)).thenReturn(mockPokemonEntity);
+    final var mockPokemonEntity = PowerMockito.mock(Entity.class);
+    PowerMockito.when(EntityLoader.loadNew(Entity.class)).thenReturn(mockPokemonEntity);
 
     // 👹 Do Nothing on `put`
     PowerMockito.doNothing()

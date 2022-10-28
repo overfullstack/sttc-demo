@@ -1,7 +1,7 @@
 package ga.overfullstack.powermock.after;
 
+import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.powermock.Pokemon;
-import ga.overfullstack.powermock.PowerEntity;
 
 class BeanToEntity {
   private final EntityAccessor entityAccessor;
@@ -10,8 +10,8 @@ class BeanToEntity {
     this.entityAccessor = entityAccessor;
   }
 
-  PowerEntity toEntity(Pokemon pokemon) {
-    final var pokemonEntity = entityAccessor.loadNew(PowerEntity.class);
+  Entity toEntity(Pokemon pokemon) {
+    final var pokemonEntity = entityAccessor.loadNew(Entity.class);
     entityAccessor.put(pokemonEntity, "name", pokemon.getName());
     entityAccessor.put(pokemonEntity, "power", pokemon.getPower());
     return pokemonEntity;

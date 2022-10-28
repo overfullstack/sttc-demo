@@ -1,7 +1,6 @@
 package ga.overfullstack.legacy;
 
-import static ga.overfullstack.legacy.DBUtil.connect;
-import static ga.overfullstack.legacy.DBUtil.insertAndGetId;
+import static ga.overfullstack.legacy.DBUtil.createAndGetId;
 import static ga.overfullstack.legacy.DBUtil.queryFromPokemon;
 import static ga.overfullstack.legacy.DBUtil.updatePokemon;
 
@@ -9,12 +8,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.exposed.dao.id.EntityID;
 import org.jetbrains.exposed.sql.Table;
 
-public abstract class Entity {
+/**
+ * Dummy class representing link to a DB entity
+ * Hard wired to Powers table
+ */
+public class Entity {
   private final EntityID<Integer> id;
 
   public Entity() {
-    connect();
-    id = insertAndGetId();
+    id = createAndGetId();
   }
 
   public String get(@NotNull String field) {
@@ -24,6 +26,4 @@ public abstract class Entity {
   public void put(@NotNull String field, String value) {
     updatePokemon(id, field, value);
   }
-
-  public abstract Table getTable();
 }

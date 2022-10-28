@@ -2,7 +2,7 @@ package ga.overfullstack.legacy;
 
 import java.lang.reflect.InvocationTargetException;
 
-/** Dummy class representing loading entity from DB */
+/** Dummy class representing loader to load entity from DB */
 public class EntityLoader {
   private EntityLoader() {}
 

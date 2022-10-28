@@ -28,8 +28,13 @@ class DBUtil {
       "eevee" to "adaptability"
     )
 
-    init {
-      connect()
+    init { // Singleton
+      Database.connect(
+        "jdbc:postgresql://localhost:5432/pokemon",
+        driver = "org.postgresql.Driver",
+        user = "postgres",
+        password = "postgres"
+      )
       transaction {
         SchemaUtils.create(Powers)
         Powers.batchInsert(INIT_DATA) { (name, power) ->
@@ -37,17 +42,6 @@ class DBUtil {
           this[Powers.power] = power
         }
       }
-    }
-
-    @JvmStatic
-    fun connect() {
-      // Database.connect("jdbc:h2:mem:regular;DB_CLOSE_DELAY=-1;", "org.h2.Driver")
-      Database.connect(
-        "jdbc:postgresql://localhost:5432/pokemon",
-        driver = "org.postgresql.Driver",
-        user = "postgres",
-        password = "postgres"
-      )
     }
 
     @JvmStatic
@@ -66,24 +60,20 @@ class DBUtil {
     }
 
     @JvmStatic
-    fun queryAllPokemonPowers(): Map<String?, String?> {
-      return transaction {
-        Powers.selectAll().associate { it[name] to it[power] }
+    fun queryAllPokemonPowers(): Map<String?, String?> = transaction {
+      Powers.selectAll().associate { it[name] to it[power] }
+    }
+
+    @JvmStatic
+    fun batchInsertPokemonPowers(pokemonToPower: List<Pair<String, String>>) = transaction {
+      Powers.batchInsert(pokemonToPower) { (pokemonName, powerValue) ->
+        this[name] = pokemonName
+        this[power] = powerValue
       }
     }
 
     @JvmStatic
-    fun batchInsertPokemonPowers(pokemonToPower: List<Pair<String, String>>) {
-      transaction {
-        Powers.batchInsert(pokemonToPower) { (pokemonName, powerValue) ->
-          this[name] = pokemonName
-          this[power] = powerValue
-        }
-      }
-    }
-
-    @JvmStatic
-    fun updatePokemon(id: EntityID<Int>, field: String, value: String) {
+    fun updatePokemon(id: EntityID<Int>, field: String, value: String) =
       fieldStrToColumn(field)?.let { fieldCol ->
         transaction {
           Powers.update({ Powers.id eq id }) {
@@ -91,10 +81,9 @@ class DBUtil {
           }
         }
       }
-    }
 
     @JvmStatic
-    fun insertAndGetId() = transaction { Powers.insertAndGetId { } }
+    fun createAndGetId() = transaction { Powers.insertAndGetId { } }
   }
 
   object Powers : IntIdTable() {
