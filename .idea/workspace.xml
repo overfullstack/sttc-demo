@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment="Update README.adoc">
-      <change afterPath="$PROJECT_DIR$/legacy/README.adoc" afterDir="false" />
+    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment="Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/PowerEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/after/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/after/BeanToEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/PokemonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/PokemonHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/after/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/now/BeanToEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/after/EntityAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/now/EntityAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/before/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/before/BeanToEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/before/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/before/BeanToEntityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/after/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/after/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/now/BeanToEntityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/after/EntityAccessorFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/now/EntityAccessorFake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/EntityLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/EntityLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +77,8 @@
         <option value="JUnit4 Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Empty" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,14 +103,14 @@
     <setting file="file://$PROJECT_DIR$/build.gradle.kts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.sub-conventions.gradle.kts" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/App.kt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/PokemonCollector.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/after/PokemonDao.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/App.kt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/demo/src/main/resources/log4j2.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/after/PokemonCollectorTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/gradle.properties" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/settings.gradle.kts" root0="FORCE_HIGHLIGHTING" />
@@ -198,6 +202,7 @@
       <recent name="ga.overfullstack.pokemon.before" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ga.overfullstack.powermock.now" />
       <recent name="ga.overfullstack.powermock.after" />
       <recent name="ga.overfullstack.pokemon.after" />
       <recent name="ga.overfullstack.pokemon.before" />
@@ -416,6 +421,8 @@
       <workItem from="1666803261320" duration="3017000" />
       <workItem from="1666853757601" duration="11853000" />
       <workItem from="1666866621913" duration="3541000" />
+      <workItem from="1666940858328" duration="2659000" />
+      <workItem from="1667208034795" duration="5159000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1647615512976</created>
@@ -550,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666871172185</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Refactoring">
+      <created>1666940942461</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666940942461</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +612,8 @@
     <MESSAGE value="Refactor and Improve comments&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
     <MESSAGE value="Major: Seperated out modules&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopalakshintala@gmail.com&gt;" />
     <MESSAGE value="Update README.adoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.adoc" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

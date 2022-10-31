@@ -36,6 +36,6 @@ Install Docker and run this command to get the Postgresql DB up
 docker compose up
 ----
 
-Run the main method from link:demo/src/main/java/ga/overfullstack/pokemon/after/App.kt[App.kt] and see it in action with link:demo/src/test/resources/pokemon.http[pokemon.http]
+Run the main method from link:demo/src/main/java/ga/overfullstack/pokemon/now/App.kt[App.kt] and see it in action with link:demo/src/test/resources/pokemon.http[pokemon.http]
 
 Find comments in the respective classes and tests for explanation

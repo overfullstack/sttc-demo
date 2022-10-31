@@ -1,6 +1,6 @@
 @file:JvmName("App")
 
-package ga.overfullstack.pokemon.after
+package ga.overfullstack.pokemon.now
 
 import org.http4k.core.Body
 import org.http4k.core.HttpHandler

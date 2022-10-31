@@ -1,4 +1,4 @@
-package ga.overfullstack.pokemon.after;
+package ga.overfullstack.pokemon.now;
 
 import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
 import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;

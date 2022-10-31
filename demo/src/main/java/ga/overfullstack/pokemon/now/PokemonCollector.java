@@ -1,4 +1,4 @@
-package ga.overfullstack.pokemon.after;
+package ga.overfullstack.pokemon.now;
 
 import java.util.Map;
 import java.util.stream.Collectors;

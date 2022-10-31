@@ -17,7 +17,7 @@ public class PokemonCollector {
     play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
   }
 
-  /** POOP (Procedure Oriented Programming) */
+  /** POP (Procedure Oriented Programming) */
   public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 

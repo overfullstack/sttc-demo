@@ -1,4 +1,4 @@
-package ga.overfullstack.powermock.after;
+package ga.overfullstack.powermock.now;
 
 import ga.overfullstack.legacy.Entity;
 import java.util.HashMap;
@@ -25,4 +25,5 @@ public class EntityAccessorFake implements EntityAccessor {
   public String get(Entity entity, String field) {
     return (String) cache.get(new Pair<>(entity, field));
   }
+
 }

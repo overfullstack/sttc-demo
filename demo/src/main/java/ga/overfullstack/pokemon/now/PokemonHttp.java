@@ -1,4 +1,4 @@
-package ga.overfullstack.pokemon.after;
+package ga.overfullstack.pokemon.now;
 
 import ga.overfullstack.legacy.HttpUtil;
 import java.util.List;

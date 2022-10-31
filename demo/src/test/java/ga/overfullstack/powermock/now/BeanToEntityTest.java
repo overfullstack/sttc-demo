@@ -1,16 +1,18 @@
-package ga.overfullstack.powermock.after;
+package ga.overfullstack.powermock.now;
 
 import ga.overfullstack.powermock.Pokemon;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.slf4j.Logger;
 
 class BeanToEntityTest {
 
   @Test
   void toEntity() {
     final var entityAccessorFake = new EntityAccessorFake();
-    // 💉 Inject the fake adapter instance
-    final var beanToEntity = new BeanToEntity(entityAccessorFake);
+    // 💉 Inject the fake adapter instances
+    final var beanToEntity = new BeanToEntity(entityAccessorFake, Mockito.mock(Logger.class));
     // Given
     final var pokemonBean = new Pokemon("mockPokemon", "mockPower");
     // When

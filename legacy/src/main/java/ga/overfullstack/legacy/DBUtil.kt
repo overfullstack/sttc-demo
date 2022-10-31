@@ -81,6 +81,10 @@ class DBUtil {
           }
         }
       }
+    
+    @JvmStatic
+    fun updatePokemon(id: EntityID<Int>, fieldValue: Map<String, String>) =
+      fieldValue.entries.forEach { (field, value) -> updatePokemon(id, field, value) }
 
     @JvmStatic
     fun createAndGetId() = transaction { Powers.insertAndGetId { } }
