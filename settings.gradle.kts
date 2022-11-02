@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "sttc-demo"
 include("legacy")
 include("demo")
+include("loki")
+include("loki-dud")

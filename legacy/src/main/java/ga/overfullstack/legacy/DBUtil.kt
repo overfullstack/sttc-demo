@@ -81,17 +81,21 @@ class DBUtil {
           }
         }
       }
-    
+
     @JvmStatic
     fun updatePokemon(id: EntityID<Int>, fieldValue: Map<String, String>) =
       fieldValue.entries.forEach { (field, value) -> updatePokemon(id, field, value) }
 
     @JvmStatic
-    fun createAndGetId() = transaction { Powers.insertAndGetId { } }
+    fun createAndGetId() = transaction {
+      Powers.insertAndGetId {
+        it[name] = ""
+      }
+    }
   }
 
   object Powers : IntIdTable() {
-    val name = varchar("name", 50).nullable()
+    val name = varchar("name", 50)
     val power = varchar("power", 50).nullable()
 
     fun fieldStrToColumn(field: String) = columns.find { col -> col.name == field }

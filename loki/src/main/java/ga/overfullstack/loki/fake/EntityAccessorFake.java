@@ -1,15 +1,12 @@
-package ga.overfullstack.powermock.now;
+package ga.overfullstack.loki.fake;
 
 import ga.overfullstack.legacy.Entity;
-import java.util.HashMap;
-import java.util.Map;
-import kotlin.Pair;
+import ga.overfullstack.loki.EntityAccessor;
+import ga.overfullstack.loki.dud.MultiAnyToAny;
 import org.mockito.Mockito;
 
 /** Fake Adapter */
 public class EntityAccessorFake implements EntityAccessor {
-
-  private final Map<Pair<?, ?>, Object> cache = new HashMap<>();
 
   @Override
   public <T extends Entity> T loadNew(Class<T> type) {
@@ -18,12 +15,11 @@ public class EntityAccessorFake implements EntityAccessor {
 
   @Override
   public void put(Entity entity, String field, String value) {
-    cache.put(new Pair<>(entity, field), value);
+    MultiAnyToAny.put(entity, field, value);
   }
 
   @Override
   public String get(Entity entity, String field) {
-    return (String) cache.get(new Pair<>(entity, field));
+    return (String) MultiAnyToAny.get(entity, field);
   }
-
 }

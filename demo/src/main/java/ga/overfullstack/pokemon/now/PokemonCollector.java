@@ -1,7 +1,6 @@
 package ga.overfullstack.pokemon.now;
 
 import java.util.Map;
-import java.util.stream.Collectors;
 import kotlin.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,15 +41,13 @@ public class PokemonCollector {
 
     // Fetch powers for missing Pokémon.
     final var missingPokemonNames =
-        pokemonNames.stream()
-            .filter(key -> !existingPokemonNameToPower.containsKey(key))
-            .collect(Collectors.toList());
+        pokemonNames.stream().filter(key -> !existingPokemonNameToPower.containsKey(key)).toList();
     logger.info(
         "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
     final var newPokemonToInsert =
         missingPokemonNames.stream()
             .map(pokemonName -> new Pair<>(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName)))
-            .collect(Collectors.toList());
+            .toList();
 
     // Insert new fetched Pokémon into the DB.
     pokemonDao.batchInsertPokemonPowers(newPokemonToInsert);

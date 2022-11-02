@@ -6,14 +6,14 @@ import java.lang.reflect.InvocationTargetException;
 public class EntityLoader {
   private EntityLoader() {}
 
-  public static <T extends Entity> T loadNew(Class<T> entityType) {
+  public static <T extends Entity> T loadNew(Class<T> entityType) throws LoadFromDBException {
     try {
       return entityType.getConstructor().newInstance();
     } catch (InstantiationException
         | IllegalAccessException
         | InvocationTargetException
         | NoSuchMethodException e) {
-      throw new RuntimeException(e);
+      throw new LoadFromDBException(e); // Just for Demo
     }
   }
 }

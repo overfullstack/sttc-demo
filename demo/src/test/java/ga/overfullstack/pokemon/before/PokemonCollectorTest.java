@@ -1,13 +1,18 @@
 package ga.overfullstack.pokemon.before;
 
+import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
+import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
+import static org.powermock.api.mockito.PowerMockito.when;
+
 import ga.overfullstack.legacy.DBUtil;
 import ga.overfullstack.legacy.HttpUtil;
+import java.util.List;
+import java.util.Map;
 import kotlin.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
-import org.mockito.MockitoAnnotations;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -16,31 +21,24 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-import java.util.Map;
-
-import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
-import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
-import static org.powermock.api.mockito.PowerMockito.when;
-
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({DBUtil.class, HttpUtil.class, LoggerFactory.class})
 @SuppressStaticInitializationFor("ga.overfullstack.legacy.DBUtil")
 @PowerMockIgnore({
-    "com.sun.org.apache.xerces.*",
-    "javax.xml.*",
-    "org.xml.*",
-    "org.w3c.dom.*",
-    "javax.management.*",
-    "javax.crypto.JceSecurity.*",
-    "javax.crypto.*"
+  "com.sun.org.apache.xerces.*",
+  "javax.xml.*",
+  "org.xml.*",
+  "org.w3c.dom.*",
+  "javax.management.*",
+  "javax.crypto.JceSecurity.*",
+  "javax.crypto.*"
 })
 /**
  * There is a lot of effort to test with PowerMock
- * <li>Prepare classes for Test</li>
- * <li>Suppress unwanted functionality</li>
- * <li>Workarounds to work with Java 11 through PowerMockIgnore</li>
- * <li>MockStatic methods</li>
+ * <li>Prepare classes for Test
+ * <li>Suppress unwanted functionality
+ * <li>Workarounds to work with Java 11 through PowerMockIgnore
+ * <li>MockStatic methods
  */
 public class PokemonCollectorTest {
   @Before

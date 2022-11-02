@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 
+/** This is an example for module specific Port & Adapter. */
 interface PokemonDao {
   default Map<String, String> queryPokemonPowers(List<String> pokemonNames) {
     return DBUtil.queryPokemonPowers(pokemonNames);

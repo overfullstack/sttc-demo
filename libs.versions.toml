@@ -33,6 +33,7 @@ immutables = "2.9.2"
 exposed = "0.40.1"
 apache-log4j = "2.19.0"
 postgresql = "42.5.0"
+mockito = "4.8.1"
 
 [libraries]
 hamcrest-core = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest-core" }
@@ -83,6 +84,7 @@ log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", versi
 log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "apache-log4j" }
 log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "apache-log4j" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 
 [bundles]
 kotest = [

@@ -1,0 +1,4 @@
+dependencies {
+    implementation(libs.apache.commons.lang3)
+    api(libs.mockito.core)
+}

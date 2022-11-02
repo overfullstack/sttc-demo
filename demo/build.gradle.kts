@@ -1,5 +1,6 @@
 dependencies {
   implementation(project(":legacy"))
+  implementation(project(":loki"))
   implementation(libs.bundles.apache.log4j)
 
   val powerMockVersion = "2.0.9"
@@ -9,7 +10,11 @@ dependencies {
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 }
 
-// This is for PowerMock
 tasks.withType<Test> {
-  jvmArgs("--add-opens=java.base/java.lang=ALL-UNNAMED", "--add-opens=java.base/java.util=ALL-UNNAMED", "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED")
+  jvmArgs(
+    // 🤦🏻♂️ This is for PowerMock
+    "--add-opens=java.base/java.lang=ALL-UNNAMED",
+    "--add-opens=java.base/java.util=ALL-UNNAMED",
+    "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED"
+  )
 }

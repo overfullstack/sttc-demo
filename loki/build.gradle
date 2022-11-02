@@ -1,0 +1,4 @@
+dependencies {
+  implementation(project(":legacy"))
+  implementation(project(":loki-dud"))
+}
