@@ -23,8 +23,8 @@ jupiter = "5.9.1"
 guava = "31.1-jre"
 moshi = "1.14.0"
 jackson-databind = "2.13.4.2"
-apache-commons-lang3="3.12.0"
-apache-commons-collections4="4.4"
+apache-commons-lang3 = "3.12.0"
+apache-commons-collections4 = "4.4"
 vador = "1.0.0"
 http4k = "4.33.1.0"
 moshix = "1.7.20-Beta-0.18.3"
@@ -34,6 +34,7 @@ exposed = "0.40.1"
 apache-log4j = "2.19.0"
 postgresql = "42.5.0"
 mockito = "3.11.0" # Using old version to be compatible with PowerMock
+spring = "5.3.23"
 
 [libraries]
 hamcrest-core = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest-core" }
@@ -61,30 +62,33 @@ junit-bom = { module = "org.junit:junit-bom", version.ref = "jupiter" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jupiter" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
-moshi = {module = "com.squareup.moshi:moshi", version.ref="moshi" }
-jackson-databind = {module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson-databind" }
-apache-commons-lang3 = {module = "org.apache.commons:commons-lang3", version.ref = "apache-commons-lang3" }
-apache-commons-collections4 = {module = "org.apache.commons:commons-collections4", version.ref = "apache-commons-collections4" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson-databind" }
+apache-commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "apache-commons-lang3" }
+apache-commons-collections4 = { module = "org.apache.commons:commons-collections4", version.ref = "apache-commons-collections4" }
 vador = { module = "com.salesforce.vador:vador", version.ref = "vador" }
 vador-matchers = { module = "com.salesforce.vador:vador-matcher", version.ref = "vador" }
-http4k-bom = {module = "org.http4k:http4k-bom", version.ref = "http4k" }
-http4k-core = {module = "org.http4k:http4k-core", version.ref = "http4k" }
-http4k-format-moshi = {module = "org.http4k:http4k-format-moshi", version.ref = "http4k" }
-http4k-format-jackson = {module = "org.http4k:http4k-format-jackson", version.ref = "http4k" }
-moshix-adapters = { module="dev.zacsweers.moshix:moshi-adapters", version.ref = "moshix" }
+http4k-bom = { module = "org.http4k:http4k-bom", version.ref = "http4k" }
+http4k-core = { module = "org.http4k:http4k-core", version.ref = "http4k" }
+http4k-format-moshi = { module = "org.http4k:http4k-format-moshi", version.ref = "http4k" }
+http4k-format-jackson = { module = "org.http4k:http4k-format-jackson", version.ref = "http4k" }
+moshix-adapters = { module = "dev.zacsweers.moshix:moshi-adapters", version.ref = "moshix" }
 graal-sdk = { module = "org.graalvm.sdk:graal-sdk", version.ref = "graal-sdk" }
 graal-js = { module = "org.graalvm.js:js", version.ref = "graal-sdk" }
-immutables-value = {module = "org.immutables:value", version.ref = "immutables" }
+immutables-value = { module = "org.immutables:value", version.ref = "immutables" }
 immutables-builder = { module = "org.immutables:builder", version.ref = "immutables" }
 immutables-value-annotations = { module = "org.immutables:value-annotations", version.ref = "immutables" }
-exposed-core = {module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
-exposed-dao = {module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
-exposed-jdbc = {module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
 log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "apache-log4j" }
 log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "apache-log4j" }
 log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "apache-log4j" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+spring-core = { module = "org.springframework:spring-core", version.ref = "spring" }
+spring-context = { module = "org.springframework:spring-context", version.ref = "spring" }
+spring-test = { module = "org.springframework:spring-test", version.ref = "spring" }
 
 [bundles]
 kotest = [
@@ -97,6 +101,7 @@ junit = ["junit-jupiter", "junit-engine"]
 vador = ["vador", "vador-matchers"]
 exposed = ["exposed-core", "exposed-dao", "exposed-jdbc"]
 apache-log4j = ["log4j-slf4j-impl", "log4j-api", "log4j-core"]
+spring = ["spring-core", "spring-context"]
 
 [plugins]
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
@@ -109,4 +114,4 @@ testLogger = { id = "com.adarshr.test-logger", version.ref = "testLogger" }
 moshix = { id = "dev.zacsweers.moshix", version.ref = "moshix" }
 kotlin-lombok = { id = "org.jetbrains.kotlin.plugin.lombok", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-ksp = {id = "com.google.devtools.ksp", version.ref = "ksp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

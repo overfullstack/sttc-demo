@@ -18,13 +18,13 @@ class BeanToEntity {
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  static Entity toEntity(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  static Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     final var pokemonEntity = EntityLoader.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {
           final var sourceValue = sourceFn.apply(pokemon);
           final var fieldName = destPair.getFirst();
-          final var isFieldRequired = destPair.getSecond();
+          final boolean isFieldRequired = destPair.getSecond();
           if (isFieldRequired && sourceValue == null) {
             pokemonEntity.put(fieldName, "");
           }
@@ -39,7 +39,7 @@ class BeanToEntity {
 
   private static void play() throws LoadFromDBException {
     final var pokemonBean = new Pokemon("pikachu", "static");
-    final var pokemonEntity = BeanToEntity.toEntity(pokemonBean);
+    final var pokemonEntity = BeanToEntity.updateInDB(pokemonBean);
     LOGGER.info("Pokemon Name: {}", pokemonEntity.get("name"));
     LOGGER.info("Pokemon Power: {}", pokemonEntity.get("value"));
   }

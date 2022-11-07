@@ -2,22 +2,32 @@ package ga.overfullstack.powermock.now;
 
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.LoadFromDBException;
+import ga.overfullstack.loki.CoreConfig;
 import ga.overfullstack.loki.EntityAccessor;
+import ga.overfullstack.loki.LoggerSupplier;
 import ga.overfullstack.powermock.Pokemon;
+
 import java.util.Map;
 import java.util.function.Function;
+
 import kotlin.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Import;
+import org.springframework.stereotype.Component;
 
+@Component
+@Import(CoreConfig.class)
 class BeanToEntity {
   private final EntityAccessor entityAccessor;
   private final Logger logger;
-
-  public BeanToEntity(EntityAccessor entityAccessor, Logger logger) {
+  
+  @Autowired
+  public BeanToEntity(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
-    this.logger = logger;
+    this.logger = loggerSupplier.supply(this.getClass());
   }
 
   private static final Map<Function<Pokemon, String>, Pair<String, Boolean>> FIELD_MAPPINGS =
@@ -25,13 +35,13 @@ class BeanToEntity {
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  Entity toEntity(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     final var pokemonEntity = entityAccessor.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {
           final var sourceValue = sourceFn.apply(pokemon);
           final var fieldName = destPair.getFirst();
-          final var isFieldRequired = destPair.getSecond();
+          final boolean isFieldRequired = destPair.getSecond();
           if (isFieldRequired && sourceValue == null) {
             entityAccessor.put(pokemonEntity, fieldName, "");
           } else {
@@ -42,14 +52,14 @@ class BeanToEntity {
   }
 
   public static void main(String[] args) throws LoadFromDBException {
-    final var beanToEntity =
-        new BeanToEntity(new EntityAccessor() {}, LoggerFactory.getLogger(BeanToEntity.class));
+    final var ctx = new AnnotationConfigApplicationContext(BeanToEntity.class);
+    final var beanToEntity = ctx.getBean(BeanToEntity.class);
     beanToEntity.play();
   }
 
   private void play() throws LoadFromDBException {
     final var pokemonBean = new Pokemon("pikachu", "static");
-    final var pokemonEntity = toEntity(pokemonBean);
+    final var pokemonEntity = updateInDB(pokemonBean);
     logger.info("Pokemon Name: {}", pokemonEntity.get("name"));
     logger.info("Pokemon Power: {}", pokemonEntity.get("power"));
   }

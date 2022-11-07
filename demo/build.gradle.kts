@@ -2,12 +2,14 @@ dependencies {
   implementation(project(":legacy"))
   implementation(project(":loki"))
   implementation(libs.bundles.apache.log4j)
+  implementation(libs.bundles.spring)
 
   val powerMockVersion = "2.0.9"
   testImplementation("org.powermock:powermock-module-junit4:$powerMockVersion")
   testImplementation("org.powermock:powermock-api-mockito2:$powerMockVersion")
-
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
+  testImplementation(libs.spring.test)
+  
 }
 
 tasks.withType<Test> {

@@ -34,7 +34,7 @@ public class BeanToEntityTest {
    * values to make the test pass
    */
   @Test
-  public void toEntity() throws LoadFromDBException {
+  public void updateInDB() throws LoadFromDBException {
     PowerMockito.mockStatic(EntityLoader.class);
     // 👹 Return a Mock entity on `loadNew`
     final var mockPokemonEntity = PowerMockito.mock(Entity.class);
@@ -49,7 +49,7 @@ public class BeanToEntityTest {
     PowerMockito.when(mockPokemonEntity.get("name")).thenReturn("");
     PowerMockito.when(mockPokemonEntity.get("power")).thenReturn(pokemonBean.power());
 
-    final var actualPokemonEntity = BeanToEntity.toEntity(pokemonBean);
+    final var actualPokemonEntity = BeanToEntity.updateInDB(pokemonBean);
 
     // 👹 Assert on the same Mock entity from above
     assertEquals("", actualPokemonEntity.get("name"));

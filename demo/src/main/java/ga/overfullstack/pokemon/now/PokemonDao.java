@@ -4,9 +4,13 @@ import ga.overfullstack.legacy.DBUtil;
 import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
+import org.springframework.stereotype.Component;
 
-/** This is an example for module specific Port & Adapter. */
-interface PokemonDao {
+import static ga.overfullstack.pokemon.now.config.BeanName.POKEMON_DAO;
+
+/** This is an example for a module specific Port & Adapter. */
+@Component(POKEMON_DAO)
+public interface PokemonDao {
   default Map<String, String> queryPokemonPowers(List<String> pokemonNames) {
     return DBUtil.queryPokemonPowers(pokemonNames);
   }

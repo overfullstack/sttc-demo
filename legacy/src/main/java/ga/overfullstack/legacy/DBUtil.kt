@@ -53,11 +53,13 @@ class DBUtil {
       }
 
     @JvmStatic
-    fun queryPokemonPowers(pokemonNames: List<String>): Map<String?, String?> = transaction {
-      Powers.selectAll()
-        .andWhere { name inList pokemonNames }
-        .associate { it[name] to it[power] }
-    }
+    fun queryPokemonPowers(pokemonNames: List<String>): Map<String?, String?> = if (pokemonNames.isNotEmpty()) {
+      transaction {
+        Powers.selectAll()
+          .andWhere { name inList pokemonNames }
+          .associate { it[name] to it[power] }
+      }
+    } else emptyMap()
 
     @JvmStatic
     fun queryAllPokemonPowers(): Map<String?, String?> = transaction {

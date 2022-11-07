@@ -37,13 +37,13 @@ public class PokemonCollector {
     final var missingPokemonNames =
         fetchedPokemonNames.stream()
             .filter(key -> !existingPokemonNameToPower.containsKey(key))
-            .collect(Collectors.toList());
+            .toList();
     logger.info(
         "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
     final var newPokemonToInsert =
         missingPokemonNames.stream()
             .map(pokemonName -> new Pair<>(pokemonName, HttpUtil.fetchPokemonPower(pokemonName)))
-            .collect(Collectors.toList());
+            .toList();
 
     // Insert new fetched Pokémon into the DB.
     DBUtil.batchInsertPokemonPowers(newPokemonToInsert);

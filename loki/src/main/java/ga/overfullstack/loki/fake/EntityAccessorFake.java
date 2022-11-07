@@ -4,8 +4,12 @@ import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.loki.EntityAccessor;
 import ga.overfullstack.loki.dud.MultiAnyToAny;
 import org.mockito.Mockito;
+import org.springframework.stereotype.Component;
+
+import static ga.overfullstack.loki.fake.BeanName.ENTITY_ACCESSOR_LOKI_FAKE;
 
 /** Fake Adapter */
+@Component(ENTITY_ACCESSOR_LOKI_FAKE)
 public class EntityAccessorFake implements EntityAccessor {
 
   @Override

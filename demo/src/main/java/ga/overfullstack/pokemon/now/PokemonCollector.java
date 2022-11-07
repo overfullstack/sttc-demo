@@ -1,28 +1,31 @@
 package ga.overfullstack.pokemon.now;
 
 import java.util.Map;
+import ga.overfullstack.loki.LoggerSupplier;
 import kotlin.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PokemonCollector {
   private final PokemonDao pokemonDao;
   private final PokemonHttp pokemonHttp;
   private final Logger logger;
 
   public static void main(String[] args) {
-    final var pokemonCollector =
-        new PokemonCollector(
-            new PokemonDao() {},
-            new PokemonHttp() {},
-            LoggerFactory.getLogger(PokemonCollector.class));
+    final var ctx = new AnnotationConfigApplicationContext(PokemonCollector.class);
+    final var pokemonCollector = ctx.getBean(PokemonCollector.class);
     pokemonCollector.play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
   }
 
-  public PokemonCollector(PokemonDao pokemonDao, PokemonHttp pokemonHttp, Logger logger) {
+  @Autowired
+  public PokemonCollector(PokemonDao pokemonDao, PokemonHttp pokemonHttp, LoggerSupplier loggerSupplier) {
     this.pokemonDao = pokemonDao;
     this.pokemonHttp = pokemonHttp;
-    this.logger = logger;
+    this.logger = loggerSupplier.supply(this.getClass());
   }
 
   public Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
@@ -31,6 +34,10 @@ public class PokemonCollector {
     // Fetch all Pokémon
     final var pokemonNames = pokemonHttp.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
     logger.info("Pokémon fetched: {}", pokemonNames);
+
+    if (pokemonNames.isEmpty()) {
+      return Map.of();
+    }
 
     // Find DB match for fetched Pokémon.
     final var existingPokemonNameToPower = pokemonDao.queryPokemonPowers(pokemonNames);
