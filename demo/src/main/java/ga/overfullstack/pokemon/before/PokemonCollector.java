@@ -2,9 +2,9 @@ package ga.overfullstack.pokemon.before;
 
 import ga.overfullstack.legacy.DBUtil;
 import ga.overfullstack.legacy.HttpUtil;
+import ga.overfullstack.legacy.LoadFromDBException;
+import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
-import java.util.stream.Collectors;
-import kotlin.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,12 +13,13 @@ public class PokemonCollector {
 
   private PokemonCollector() {}
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws LoadFromDBException {
     play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
   }
 
   /** POP (Procedure Oriented Programming) */
-  public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
+  public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch)
+      throws LoadFromDBException {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 
     // Fetch all Pokémon
@@ -40,13 +41,15 @@ public class PokemonCollector {
             .toList();
     logger.info(
         "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
-    final var newPokemonToInsert =
+    final var pokemon =
         missingPokemonNames.stream()
-            .map(pokemonName -> new Pair<>(pokemonName, HttpUtil.fetchPokemonPower(pokemonName)))
+            .map(pokemonName -> new Pokemon(pokemonName, HttpUtil.fetchPokemonPower(pokemonName)))
             .toList();
 
     // Insert new fetched Pokémon into the DB.
-    DBUtil.batchInsertPokemonPowers(newPokemonToInsert);
+    for (final var poke : pokemon) {
+      BeanToEntity.updateInDB(poke);
+    }
 
     // Fetch all collected Pokémon in DB.
     final var allPokemonWithPowers = DBUtil.queryAllPokemonPowers();

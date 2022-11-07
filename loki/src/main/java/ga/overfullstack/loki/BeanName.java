@@ -7,5 +7,4 @@ public final class BeanName {
 
   public static final String ENTITY_ACCESSOR_LOKI = "EntityAccessorLoki";
   public static final String LOGGER_SUPPLIER_LOKI = "LoggerSupplierLoki";
-  
 }

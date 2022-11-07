@@ -11,9 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({
-    EntityAccessorFake.class
-})
+@Import({EntityAccessorFake.class})
 public class CoreFakeConfig {
   @Bean
   @Qualifier(LOGGER_NO_OP_SUPPLIER_LOKI)

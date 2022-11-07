@@ -1,24 +1,26 @@
-package ga.overfullstack.powermock.before;
+package ga.overfullstack.pokemon.before;
 
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.EntityLoader;
 import ga.overfullstack.legacy.LoadFromDBException;
-import ga.overfullstack.powermock.Pokemon;
+import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
 import java.util.function.Function;
 import kotlin.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
-class BeanToEntity {
+@Component
+public class BeanToEntity {
   private static final Logger LOGGER = LoggerFactory.getLogger(BeanToEntity.class);
   private static final Map<Function<Pokemon, String>, Pair<String, Boolean>> FIELD_MAPPINGS =
       Map.of(
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  static Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  public static Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     final var pokemonEntity = EntityLoader.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {

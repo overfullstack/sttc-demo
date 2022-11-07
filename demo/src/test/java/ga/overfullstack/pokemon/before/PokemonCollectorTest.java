@@ -6,9 +6,10 @@ import static org.powermock.api.mockito.PowerMockito.when;
 
 import ga.overfullstack.legacy.DBUtil;
 import ga.overfullstack.legacy.HttpUtil;
+import ga.overfullstack.legacy.LoadFromDBException;
+import ga.overfullstack.pokemon.Pokemon;
 import java.util.List;
 import java.util.Map;
-import kotlin.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,8 +22,15 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * There is a lot of effort to test with PowerMock
+ * <li>Prepare classes for Test
+ * <li>Suppress unwanted functionality
+ * <li>Workarounds to work with Java 11 through PowerMockIgnore
+ * <li>MockStatic methods
+ */
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({DBUtil.class, HttpUtil.class, LoggerFactory.class})
+@PrepareForTest({DBUtil.class, HttpUtil.class, BeanToEntity.class, LoggerFactory.class})
 @SuppressStaticInitializationFor("ga.overfullstack.legacy.DBUtil")
 @PowerMockIgnore({
   "com.sun.org.apache.xerces.*",
@@ -33,25 +41,19 @@ import org.slf4j.LoggerFactory;
   "javax.crypto.JceSecurity.*",
   "javax.crypto.*"
 })
-/**
- * There is a lot of effort to test with PowerMock
- * <li>Prepare classes for Test
- * <li>Suppress unwanted functionality
- * <li>Workarounds to work with Java 11 through PowerMockIgnore
- * <li>MockStatic methods
- */
 public class PokemonCollectorTest {
   @Before
   public void setUp() {
     PowerMockito.mockStatic(DBUtil.class);
     PowerMockito.mockStatic(HttpUtil.class);
+    PowerMockito.mockStatic(BeanToEntity.class);
     PowerMockito.mockStatic(LoggerFactory.class);
     PowerMockito.when(LoggerFactory.getLogger(ArgumentMatchers.any(Class.class)))
         .thenAnswer(ignore -> PowerMockito.mock(Logger.class));
   }
 
   @Test
-  public void play() {
+  public void play() throws LoadFromDBException {
     final var pokemonFromNetworkFake = List.of("pokemon1", "pokemon2", "pokemon3");
     when(HttpUtil.fetchAllPokemon(ArgumentMatchers.anyInt(), ArgumentMatchers.anyInt()))
         .thenAnswer(ignore -> pokemonFromNetworkFake);
@@ -65,7 +67,7 @@ public class PokemonCollectorTest {
 
     PokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
 
-    PowerMockito.verifyStatic(DBUtil.class);
-    DBUtil.batchInsertPokemonPowers(List.of(new Pair<>("pokemon2", "power2")));
+    PowerMockito.verifyStatic(BeanToEntity.class);
+    BeanToEntity.updateInDB(new Pokemon("pokemon2", "power2"));
   }
 }

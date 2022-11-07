@@ -6,9 +6,5 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({
-    PokemonHttpFake.class,
-    PokemonDAOFake.class
-})
-public class ConfigForTest {
-}
+@Import({PokemonHttpFake.class, PokemonDAOFake.class})
+public class ConfigForTest {}

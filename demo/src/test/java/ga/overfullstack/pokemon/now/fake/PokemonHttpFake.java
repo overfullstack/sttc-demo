@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component(POKEMON_HTTP_FAKE)
 public class PokemonHttpFake implements PokemonHttp {
   @Override
-  public List<String> fetchAllPokemon(int offset, int limit) {
+  public List<String> fetchAllPokemon(int ignore1, int ignore2) {
     return List.of("pokemon1", "pokemon2", "pokemon3");
   }
 
@@ -19,6 +19,6 @@ public class PokemonHttpFake implements PokemonHttp {
     if ("pokemon2".equals(pokemonName)) {
       return "power2";
     }
-    throw new IllegalArgumentException("Unknown pokemon");
+    throw new IllegalArgumentException("Unknown pokemon name to fake");
   }
 }

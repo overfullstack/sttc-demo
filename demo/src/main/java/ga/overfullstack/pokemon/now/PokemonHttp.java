@@ -1,13 +1,11 @@
 package ga.overfullstack.pokemon.now;
 
 import ga.overfullstack.legacy.HttpUtil;
-import org.springframework.stereotype.Component;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
-import static ga.overfullstack.pokemon.now.config.BeanName.POKEMON_HTTP;
-
-/** This is an example for a module specific Port & Adapter. */
-@Component(POKEMON_HTTP)
+/** This is an example for a module-specific Port & Adapter. */
+@Component
 public interface PokemonHttp {
   default List<String> fetchAllPokemon(int offset, int limit) {
     return HttpUtil.fetchAllPokemon(offset, limit);

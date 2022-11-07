@@ -4,35 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment="Downgrade mockito">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/config/BeanName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDAOFake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/config/BeanName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/config/ConfigForTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/BeanName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/CoreConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/LoggerSupplier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/BeanName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/CoreFakeConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment="Integrated both examples">
+      <changelist_data name="Gopal S Akshintala" email="gopala.akshintala@salesforce.com" />
+      <change afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/demo/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/before/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/before/BeanToEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/now/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/powermock/now/BeanToEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/before/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/before/BeanToEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/now/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/powermock/now/BeanToEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/loki/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/EntityAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/EntityAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/EntityAccessorFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/EntityAccessorFake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,11 +199,11 @@
       <recent name="ga.overfullstack.loki" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ga.overfullstack.pokemon.now.fake" />
       <recent name="ga.overfullstack.pokemon.now" />
+      <recent name="ga.overfullstack.pokemon.before" />
+      <recent name="ga.overfullstack.pokemon" />
+      <recent name="ga.overfullstack.pokemon.now.fake" />
       <recent name="ga.overfullstack.loki.fake" />
-      <recent name="ga.overfullstack.powermock.now" />
-      <recent name="ga.overfullstack.powermock.after" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -237,21 +215,8 @@
       <command value="gradle clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.BeanToEntityTest.updateInDB">
-    <configuration name="BeanToEntity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ga.overfullstack.powermock.now.BeanToEntity" />
-      <module name="sttc-demo.demo.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ga.overfullstack.powermock.now.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BeanToEntityTest.toEntity (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.sttc-demo [clean build]">
+    <configuration name="BeanToEntityTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -264,7 +229,7 @@
           <list>
             <option value=":demo:test" />
             <option value="--tests" />
-            <option value="&quot;ga.overfullstack.powermock.now.BeanToEntityTest.toEntity&quot;" />
+            <option value="&quot;ga.overfullstack.pokemon.now.BeanToEntityTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -287,7 +252,30 @@
           <list>
             <option value=":demo:test" />
             <option value="--tests" />
-            <option value="&quot;ga.overfullstack.powermock.now.BeanToEntityTest.updateInDB&quot;" />
+            <option value="&quot;ga.overfullstack.pokemon.before.BeanToEntityTest.updateInDB&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PokemonCollectorTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":demo:test" />
+            <option value="--tests" />
+            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -369,11 +357,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BeanToEntityTest.updateInDB" />
-        <item itemvalue="Application.BeanToEntity" />
         <item itemvalue="Gradle.sttc-demo [clean build]" />
         <item itemvalue="Gradle.sttc-demo [spotlessApply]" />
-        <item itemvalue="Gradle.BeanToEntityTest.toEntity (1)" />
+        <item itemvalue="Gradle.PokemonCollectorTest (1)" />
+        <item itemvalue="Gradle.BeanToEntityTest (1)" />
+        <item itemvalue="Gradle.BeanToEntityTest.updateInDB" />
       </list>
     </recent_temporary>
   </component>
@@ -448,7 +436,10 @@
       <workItem from="1667639004951" duration="548000" />
       <workItem from="1667643527729" duration="1467000" />
       <workItem from="1667718852954" duration="3482000" />
-      <workItem from="1667801257540" duration="379000" />
+      <workItem from="1667801257540" duration="1695000" />
+      <workItem from="1667814850960" duration="6804000" />
+      <workItem from="1667836182556" duration="4213000" />
+      <workItem from="1667924915701" duration="3493000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1647615512976</created>
@@ -604,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667386685497</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Make use of Spring 🍃">
+      <created>1667801962799</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667801962799</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +653,9 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value="- Refactoring&#10;- Changed pkg name from after to now" />
     <MESSAGE value="Downgrade mockito" />
-    <option name="LAST_COMMIT_MESSAGE" value="Downgrade mockito" />
+    <MESSAGE value="Make use of Spring " />
+    <MESSAGE value="Integrated both examples" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrated both examples" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

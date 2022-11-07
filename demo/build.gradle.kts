@@ -9,7 +9,6 @@ dependencies {
   testImplementation("org.powermock:powermock-api-mockito2:$powerMockVersion")
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
   testImplementation(libs.spring.test)
-  
 }
 
 tasks.withType<Test> {

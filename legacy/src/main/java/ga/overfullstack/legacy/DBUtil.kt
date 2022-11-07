@@ -59,7 +59,9 @@ class DBUtil {
           .andWhere { name inList pokemonNames }
           .associate { it[name] to it[power] }
       }
-    } else emptyMap()
+    } else {
+      emptyMap()
+    }
 
     @JvmStatic
     fun queryAllPokemonPowers(): Map<String?, String?> = transaction {

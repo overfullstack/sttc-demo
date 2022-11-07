@@ -1,11 +1,11 @@
 package ga.overfullstack.loki;
 
+import static ga.overfullstack.loki.BeanName.ENTITY_ACCESSOR_LOKI;
+
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.EntityLoader;
 import ga.overfullstack.legacy.LoadFromDBException;
 import org.springframework.stereotype.Component;
-
-import static ga.overfullstack.loki.BeanName.ENTITY_ACCESSOR_LOKI;
 
 /**
  * Port and Prod Adapter together (Thanks to `default` interface methods in Java). This is just a

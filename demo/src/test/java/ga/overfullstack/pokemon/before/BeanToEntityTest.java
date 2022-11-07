@@ -1,11 +1,11 @@
-package ga.overfullstack.powermock.before;
+package ga.overfullstack.pokemon.before;
 
 import static org.junit.Assert.assertEquals;
 
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.EntityLoader;
 import ga.overfullstack.legacy.LoadFromDBException;
-import ga.overfullstack.powermock.Pokemon;
+import ga.overfullstack.pokemon.Pokemon;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;

@@ -1,29 +1,24 @@
-package ga.overfullstack.powermock.now;
+package ga.overfullstack.pokemon.now;
 
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.LoadFromDBException;
-import ga.overfullstack.loki.CoreConfig;
 import ga.overfullstack.loki.EntityAccessor;
 import ga.overfullstack.loki.LoggerSupplier;
-import ga.overfullstack.powermock.Pokemon;
-
+import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
 import java.util.function.Function;
-
 import kotlin.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 @Component
-@Import(CoreConfig.class)
-class BeanToEntity {
+public class BeanToEntity {
   private final EntityAccessor entityAccessor;
   private final Logger logger;
-  
+
   @Autowired
   public BeanToEntity(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
@@ -35,7 +30,7 @@ class BeanToEntity {
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  public Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     final var pokemonEntity = entityAccessor.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {
