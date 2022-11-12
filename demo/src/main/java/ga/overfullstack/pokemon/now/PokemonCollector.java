@@ -39,32 +39,35 @@ public class PokemonCollector {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 
     // Fetch all Pokémon
-    final var pokemonNames = pokemonHttp.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
-    logger.info("Pokémon fetched: {}", pokemonNames);
+    final var fetchedPokemonNames = pokemonHttp.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
+    logger.info("Pokémon fetched: {}", fetchedPokemonNames);
 
-    if (pokemonNames.isEmpty()) {
+    if (fetchedPokemonNames.isEmpty()) {
       return Map.of();
     }
 
     // Find DB match for fetched Pokémon.
-    final var existingPokemonNameToPower = pokemonDao.queryPokemonPowers(pokemonNames);
+    final var existingPokemonNameToPower = pokemonDao.queryPokemonPowers(fetchedPokemonNames);
     logger.info(
         "{} Matching Pokémon with Powers in DB: {}",
         existingPokemonNameToPower.size(),
         existingPokemonNameToPower);
 
-    // Fetch powers for missing Pokémon.
-    final var missingPokemonNames =
-        pokemonNames.stream().filter(key -> !existingPokemonNameToPower.containsKey(key)).toList();
+    // Find missing Pokémon from DB (fetchedPokemonNames - existingPokemonNames).
+    final var pokemonNamesMissingFromDB =
+        fetchedPokemonNames.stream().filter(key -> !existingPokemonNameToPower.containsKey(key)).toList();
     logger.info(
-        "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
-    final var pokemon =
-        missingPokemonNames.stream().map(pokemonName -> new Pokemon(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName)))
+        "Fetch powers for {} missing Pokémon: {}", pokemonNamesMissingFromDB.size(), pokemonNamesMissingFromDB);
+    
+    // Fetch powers for missing Pokémon.
+    final var newPokemonToInsert =
+        pokemonNamesMissingFromDB.stream()
+            .map(pokemonName -> new Pokemon(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName)))
             .toList();
 
     // Insert new fetched Pokémon into the DB.
-    for (final var poke : pokemon) {
-      beanToEntity.updateInDB(poke);
+    for (final var poke : newPokemonToInsert) {
+      beanToEntity.insertInDB(poke);
     }
 
     // Fetch all collected Pokémon in DB.

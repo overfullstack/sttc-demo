@@ -7,7 +7,7 @@ import static ga.overfullstack.legacy.DBUtil.updatePokemon;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.exposed.dao.id.EntityID;
 
-/** Dummy legacy class representing link to a DB entity Hard wired to Powers table */
+/** Dummy legacy class representing a link to a DB row in Powers table */
 public class Entity {
   private final EntityID<Integer> id;
 

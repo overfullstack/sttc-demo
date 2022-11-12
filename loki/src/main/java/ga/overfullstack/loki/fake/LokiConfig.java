@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import({EntityAccessorFake.class})
-public class CoreFakeConfig {
+public class LokiConfig {
   @Bean
   @Qualifier(LOGGER_NO_OP_SUPPLIER_LOKI)
   public LoggerSupplier loggerSupplier() {

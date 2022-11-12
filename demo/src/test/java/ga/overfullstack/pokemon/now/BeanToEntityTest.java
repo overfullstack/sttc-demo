@@ -4,7 +4,7 @@ import static ga.overfullstack.loki.fake.BeanName.ENTITY_ACCESSOR_LOKI_FAKE;
 
 import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.loki.EntityAccessor;
-import ga.overfullstack.loki.fake.CoreFakeConfig;
+import ga.overfullstack.loki.fake.LokiConfig;
 import ga.overfullstack.pokemon.Pokemon;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {CoreFakeConfig.class, BeanToEntity.class})
+@ContextConfiguration(classes = {LokiConfig.class, BeanToEntity.class})
 class BeanToEntityTest {
 
   @Autowired BeanToEntity beanToEntity;
@@ -29,7 +29,7 @@ class BeanToEntityTest {
     // Given
     final var pokemonBean = new Pokemon(null, "mockPower");
     // When
-    final var pokemonEntity = beanToEntity.updateInDB(pokemonBean);
+    final var pokemonEntity = beanToEntity.insertInDB(pokemonBean);
     // Then
     Assertions.assertEquals("", entityAccessorFake.get(pokemonEntity, "name"));
     Assertions.assertEquals(pokemonBean.power(), entityAccessorFake.get(pokemonEntity, "power"));

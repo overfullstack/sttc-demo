@@ -64,7 +64,7 @@ class DBUtil {
     }
 
     @JvmStatic
-    fun queryAllPokemonPowers(): Map<String?, String?> = transaction {
+    fun queryAllPokemonWithPowers(): Map<String?, String?> = transaction {
       Powers.selectAll().associate { it[name] to it[power] }
     }
 

@@ -55,7 +55,7 @@ public class PokemonCollectorTest {
   @Test
   public void play() throws LoadFromDBException {
     final var pokemonFromNetworkFake = List.of("pokemon1", "pokemon2", "pokemon3");
-    when(HttpUtil.fetchAllPokemon(ArgumentMatchers.anyInt(), ArgumentMatchers.anyInt()))
+    when(HttpUtil.fetchAllPokemonNames(ArgumentMatchers.anyInt(), ArgumentMatchers.anyInt()))
         .thenAnswer(ignore -> pokemonFromNetworkFake);
     final var pokemonWithPowerFromDBFake =
         Map.of(
@@ -68,6 +68,6 @@ public class PokemonCollectorTest {
     PokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
 
     PowerMockito.verifyStatic(BeanToEntity.class);
-    BeanToEntity.updateInDB(new Pokemon("pokemon2", "power2"));
+    BeanToEntity.insertInDB(new Pokemon("pokemon2", "power2"));
   }
 }

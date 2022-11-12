@@ -15,7 +15,7 @@ private const val POKE_BASE_URI = "https://pokeapi.co/api/v2/"
 class HttpUtil {
   companion object {
     @JvmStatic
-    fun fetchAllPokemon(offset: Int, limit: Int): List<String> {
+    fun fetchAllPokemonNames(offset: Int, limit: Int): List<String> {
       val resultsLens = Body.auto<Results>().toLens()
       val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of(POKE_BASE_URI)).then(JavaHttpClient())
       val response: Response = pokemonApi(

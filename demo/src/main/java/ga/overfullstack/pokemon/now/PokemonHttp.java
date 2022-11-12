@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface PokemonHttp {
   default List<String> fetchAllPokemon(int offset, int limit) {
-    return HttpUtil.fetchAllPokemon(offset, limit);
+    return HttpUtil.fetchAllPokemonNames(offset, limit);
   }
 
   default String fetchPokemonPower(String pokemonName) {

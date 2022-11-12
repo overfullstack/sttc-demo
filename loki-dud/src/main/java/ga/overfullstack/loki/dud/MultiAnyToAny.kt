@@ -21,4 +21,8 @@ object MultiAnyToAny {
   fun put(key1: Any, key2: Any, value: Any?) {
     pairOfAnyToAnyCache[Pair(key1, key2)] = value
   }
+
+  @JvmStatic
+  fun <K : Any, P : Any, V : Any?> getCache(): Map<K, Map<P, V>> = pairOfAnyToAnyCache.map { (key, value) -> Triple(key.first as K, key.second as P, value as V) }
+    .groupBy({ it.first }, { Pair(it.second, it.third) }).mapValues { (_, value) -> value.toMap() }
 }

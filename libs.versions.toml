@@ -55,7 +55,6 @@ kotest-frameworkEngine = { module = "io.kotest:kotest-framework-engine", version
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
 kotest-runnerJUnit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core" }
-assertj-vavr = { module = "org.assertj:assertj-vavr", version.ref = "assertj-vavr" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j-api" }
 log4j-slf4j18-impl = { module = "org.apache.logging.log4j:log4j-slf4j18-impl", version.ref = "log4j-slf4j18-impl" }
 junit-bom = { module = "org.junit:junit-bom", version.ref = "jupiter" }

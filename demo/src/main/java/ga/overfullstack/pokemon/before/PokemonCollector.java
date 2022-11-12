@@ -22,10 +22,14 @@ public class PokemonCollector {
       throws LoadFromDBException {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 
-    // Fetch all Pokémon
+    // Fetch all Pokémon names
     final var fetchedPokemonNames =
-        HttpUtil.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
+        HttpUtil.fetchAllPokemonNames(pokemonOffsetToFetch, pokemonLimitToFetch);
     logger.info("Pokémon fetched: {}", fetchedPokemonNames);
+    
+    if (fetchedPokemonNames.isEmpty()) {
+      return Map.of();
+    }
 
     // Find DB match for fetched Pokémon.
     final var existingPokemonNameToPower = DBUtil.queryPokemonPowers(fetchedPokemonNames);
@@ -34,13 +38,15 @@ public class PokemonCollector {
         existingPokemonNameToPower.size(),
         existingPokemonNameToPower);
 
-    // Fetch powers for missing Pokémon (fetchedPokemonNames - existingPokemonNames).
+    // Find missing Pokémon from DB (fetchedPokemonNames - existingPokemonNames).
     final var missingPokemonNames =
         fetchedPokemonNames.stream()
             .filter(key -> !existingPokemonNameToPower.containsKey(key))
             .toList();
     logger.info(
         "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
+    
+    // Fetch powers for missing Pokémon.
     final var pokemon =
         missingPokemonNames.stream()
             .map(pokemonName -> new Pokemon(pokemonName, HttpUtil.fetchPokemonPower(pokemonName)))
@@ -48,11 +54,11 @@ public class PokemonCollector {
 
     // Insert new fetched Pokémon into the DB.
     for (final var poke : pokemon) {
-      BeanToEntity.updateInDB(poke);
+      BeanToEntity.insertInDB(poke);
     }
 
     // Fetch all collected Pokémon in DB.
-    final var allPokemonWithPowers = DBUtil.queryAllPokemonPowers();
+    final var allPokemonWithPowers = DBUtil.queryAllPokemonWithPowers();
     logger.info(
         "{} Pokémon with Powers in DB: {}", allPokemonWithPowers.size(), allPokemonWithPowers);
     return allPokemonWithPowers;

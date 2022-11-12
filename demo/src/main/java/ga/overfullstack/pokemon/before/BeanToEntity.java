@@ -16,11 +16,12 @@ import org.springframework.stereotype.Component;
 public class BeanToEntity {
   private static final Logger LOGGER = LoggerFactory.getLogger(BeanToEntity.class);
   private static final Map<Function<Pokemon, String>, Pair<String, Boolean>> FIELD_MAPPINGS =
-      Map.of(
+      Map.of( // FieldMapper, Pair(FieldName, isRequiredField)
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  public static Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  public static Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+    // Entity acts like a reference to a Row
     final var pokemonEntity = EntityLoader.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {
@@ -41,7 +42,7 @@ public class BeanToEntity {
 
   private static void play() throws LoadFromDBException {
     final var pokemonBean = new Pokemon("pikachu", "static");
-    final var pokemonEntity = BeanToEntity.updateInDB(pokemonBean);
+    final var pokemonEntity = BeanToEntity.insertInDB(pokemonBean);
     LOGGER.info("Pokemon Name: {}", pokemonEntity.get("name"));
     LOGGER.info("Pokemon Power: {}", pokemonEntity.get("value"));
   }

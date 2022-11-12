@@ -7,7 +7,7 @@ import org.mockito.Mockito
 object Utils {
   private const val RANDOM_STRING_LENGTH = 18
   private const val RANDOM_NUMERIC_LENGTH = 3
-  fun <T : Any> randomForPrimitiveType(type: Class<T>): Any = when (type) {
+  fun <T : Any> randomForPrimitiveType(type: Class<T>): T = when (type) {
     String::class.java -> randomAlphabetic(RANDOM_STRING_LENGTH)
     Int::class.javaObjectType -> randomNumeric(RANDOM_NUMERIC_LENGTH).toInt()
     Long::class.javaObjectType -> randomNumeric(RANDOM_NUMERIC_LENGTH).toLong()
@@ -15,5 +15,5 @@ object Utils {
     Float::class.javaObjectType -> randomNumeric(RANDOM_NUMERIC_LENGTH).toFloat()
     Boolean::class.javaObjectType -> true
     else -> Mockito.mock(type)
-  }
+  } as T
 }

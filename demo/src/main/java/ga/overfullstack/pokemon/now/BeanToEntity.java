@@ -30,7 +30,7 @@ public class BeanToEntity {
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  public Entity updateInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  public Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     final var pokemonEntity = entityAccessor.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {
@@ -54,7 +54,7 @@ public class BeanToEntity {
 
   private void play() throws LoadFromDBException {
     final var pokemonBean = new Pokemon("pikachu", "static");
-    final var pokemonEntity = updateInDB(pokemonBean);
+    final var pokemonEntity = insertInDB(pokemonBean);
     logger.info("Pokemon Name: {}", pokemonEntity.get("name"));
     logger.info("Pokemon Power: {}", pokemonEntity.get("power"));
   }

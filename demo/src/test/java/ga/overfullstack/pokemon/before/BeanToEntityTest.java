@@ -49,7 +49,7 @@ public class BeanToEntityTest {
     PowerMockito.when(mockPokemonEntity.get("name")).thenReturn("");
     PowerMockito.when(mockPokemonEntity.get("power")).thenReturn(pokemonBean.power());
 
-    final var actualPokemonEntity = BeanToEntity.updateInDB(pokemonBean);
+    final var actualPokemonEntity = BeanToEntity.insertInDB(pokemonBean);
 
     // 👹 Assert on the same Mock entity from above
     assertEquals("", actualPokemonEntity.get("name"));
