@@ -33,7 +33,7 @@ immutables = "2.9.2"
 exposed = "0.40.1"
 apache-log4j = "2.19.0"
 postgresql = "42.5.0"
-mockito = "3.11.0" # Using old version to be compatible with PowerMock
+mockito = "4.8.1" # Using old version to be compatible with PowerMock
 spring = "5.3.23"
 
 [libraries]
