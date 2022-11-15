@@ -39,7 +39,8 @@ public class PokemonCollector {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 
     // Fetch all Pokémon
-    final var fetchedPokemonNames = pokemonHttp.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
+    final var fetchedPokemonNames =
+        pokemonHttp.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
     logger.info("Pokémon fetched: {}", fetchedPokemonNames);
 
     if (fetchedPokemonNames.isEmpty()) {
@@ -55,14 +56,19 @@ public class PokemonCollector {
 
     // Find missing Pokémon from DB (fetchedPokemonNames - existingPokemonNames).
     final var pokemonNamesMissingFromDB =
-        fetchedPokemonNames.stream().filter(key -> !existingPokemonNameToPower.containsKey(key)).toList();
+        fetchedPokemonNames.stream()
+            .filter(key -> !existingPokemonNameToPower.containsKey(key))
+            .toList();
     logger.info(
-        "Fetch powers for {} missing Pokémon: {}", pokemonNamesMissingFromDB.size(), pokemonNamesMissingFromDB);
-    
+        "Fetch powers for {} missing Pokémon: {}",
+        pokemonNamesMissingFromDB.size(),
+        pokemonNamesMissingFromDB);
+
     // Fetch powers for missing Pokémon.
     final var newPokemonToInsert =
         pokemonNamesMissingFromDB.stream()
-            .map(pokemonName -> new Pokemon(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName)))
+            .map(
+                pokemonName -> new Pokemon(pokemonName, pokemonHttp.fetchPokemonPower(pokemonName)))
             .toList();
 
     // Insert new fetched Pokémon into the DB.

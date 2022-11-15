@@ -16,7 +16,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({EntityLoader.class})
-@PowerMockIgnore({
+@PowerMockIgnore({ // To make PowerMock work with the latest Java version
   "com.sun.org.apache.xerces.*",
   "javax.xml.*",
   "org.xml.*",
@@ -31,7 +31,8 @@ public class BeanToEntityTest {
    * This test achieves 100% coverage without testing anything This doesn't test the behavior which
    * is mapping fields from `pokemonBean` to `pokemonEntity` Instead, it returns a Mock on
    * `loadNew`, does nothing on `put`, does `when-thenReturn` on the Mock and asserts the same
-   * values to make the test pass
+   * values to make the test pass Although this gives 100% test coverage, this doesn't detect a bug
+   * 🐞 in the code
    */
   @Test
   public void updateInDB() throws LoadFromDBException {

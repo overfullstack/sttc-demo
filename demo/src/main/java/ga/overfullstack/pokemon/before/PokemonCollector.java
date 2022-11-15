@@ -26,7 +26,7 @@ public class PokemonCollector {
     final var fetchedPokemonNames =
         HttpUtil.fetchAllPokemonNames(pokemonOffsetToFetch, pokemonLimitToFetch);
     logger.info("Pokémon fetched: {}", fetchedPokemonNames);
-    
+
     if (fetchedPokemonNames.isEmpty()) {
       return Map.of();
     }
@@ -45,7 +45,7 @@ public class PokemonCollector {
             .toList();
     logger.info(
         "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
-    
+
     // Fetch powers for missing Pokémon.
     final var pokemon =
         missingPokemonNames.stream()

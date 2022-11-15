@@ -4,34 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment="Integrate both examples">
-      <change afterPath="$PROJECT_DIR$/loki-dud/src/test/kotlin/ga/overfullstack/dud/AnyToAnyTest.kt" afterDir="false" />
+    <list default="true" id="324ef40e-3221-44a2-a8c4-8bd26409ed92" name="Changes" comment="Use Dud for PokemonCollectorTest">
+      <change afterPath="$PROJECT_DIR$/.idea/detekt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/my-github.sttc-demo.buildSrc.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/Dud.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/sttc-demo.buildSrc.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/sttc-demo.buildSrc.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/demo/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/BeanToEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/BeanToEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDAOFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/config/ConfigForTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/config/ConfigForTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/DBUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/HttpUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/HttpUtil.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki-dud/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/loki/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/CoreFakeConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/LokiConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/EntityAccessorFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/EntityAccessorFake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/renovate.json" beforeDir="false" afterPath="$PROJECT_DIR$/renovate.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +85,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -111,6 +104,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/blt/tools/Darwin/jdk/openjdk_17.0.3_17.34.20_x64/zulu-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/blt/tools/Darwin/jdk/openjdk_17.0.3_17.34.20_x64/zulu-17.jdk/Contents/Home/lib/src.zip!/java.base/java/util/HashMap.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/blt/tools/Darwin/jdk/openjdk_17.0.3_17.34.20_x64/zulu-17.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Map.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.github/workflows/build.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/build.gradle.kts" root0="FORCE_HIGHLIGHTING" />
@@ -149,33 +143,33 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultPlantUmlFileTemplate": "Empty",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "full.screen.before.presentation.mode": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/gopala.akshintala/code-clones/my-github/sttc-demo/loki-dud/src/main/java/ga/overfullstack/loki/dud",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "2e6b63a02064b6940fb12d13237ecc25",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;Empty&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gopala.akshintala/code-clones/my-github/sttc-demo/loki-dud/src/main/java/ga/overfullstack/loki/dud&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.detekt&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2e6b63a02064b6940fb12d13237ecc25&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="master" />
@@ -216,6 +210,7 @@
       <recent name="ga.overfullstack.pokemon.before" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="ga.overfullstack.loki.dud" />
       <recent name="ga.overfullstack.loki" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -231,12 +226,35 @@
       <command value="gradle clean check" />
       <command value="gradle build" />
       <command value="gradle clean build --no-build-cache" />
-      <command value="gradle clean build" />
       <command value="gradle spotlessApply" />
+      <command value="gradle clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.sttc-demo [spotlessApply]">
-    <configuration name="PokemonCollectorTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.sttc-demo [clean build]">
+    <configuration name="BeanToEntityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":demo:test" />
+            <option value="--tests" />
+            <option value="&quot;ga.overfullstack.pokemon.before.BeanToEntityTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PokemonCollectorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -259,7 +277,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PokemonCollectorTest.collectPokemon" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PokemonCollectorTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -272,7 +290,7 @@
           <list>
             <option value=":demo:test" />
             <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest.collectPokemon&quot;" />
+            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -352,28 +370,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="AnyToAnyTest: Generate random map" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
-      <module name="sttc-demo.loki-dud.test" />
-      <option name="jrePath" value="" />
-      <option name="jrePathEnabled" value="false" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
-      <option name="programParameters" value="" />
-      <option name="specName" value="ga.overfullstack.dud.AnyToAnyTest" />
-      <option name="testPath" value="Generate random map" />
-      <option name="packageName" value="" />
-      <option name="vmparams" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PokemonCollectorTest.collectPokemon" />
-        <item itemvalue="Kotest.AnyToAnyTest: Generate random map" />
-        <item itemvalue="Gradle.sttc-demo [clean build]" />
         <item itemvalue="Gradle.sttc-demo [spotlessApply]" />
-        <item itemvalue="Gradle.PokemonCollectorTest (1)" />
+        <item itemvalue="Gradle.sttc-demo [clean build]" />
+        <item itemvalue="Gradle.BeanToEntityTest" />
+        <item itemvalue="Gradle.PokemonCollectorTest" />
+        <item itemvalue="Gradle.PokemonCollectorTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -457,7 +460,11 @@
       <workItem from="1668091461396" duration="2924000" />
       <workItem from="1668184397159" duration="7785000" />
       <workItem from="1668235075604" duration="9769000" />
-      <workItem from="1668260392132" duration="2544000" />
+      <workItem from="1668260392132" duration="2662000" />
+      <workItem from="1668315144884" duration="1911000" />
+      <workItem from="1668338416995" duration="1137000" />
+      <workItem from="1668404339380" duration="19909000" />
+      <workItem from="1668516846346" duration="135000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1647615512976</created>
@@ -627,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667929568032</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Use Dud for PokemonCollectorTest">
+      <created>1668269955737</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1668269955737</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +695,8 @@
     <MESSAGE value="Make use of Spring " />
     <MESSAGE value="Integrated both examples" />
     <MESSAGE value="Integrate both examples" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate both examples" />
+    <MESSAGE value="Use Dud for PokemonCollectorTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use Dud for PokemonCollectorTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -692,5 +707,6 @@
     <SUITE FILE_PATH="coverage/ppp_demo$PokemonCollectorTest_play2.ic" NAME="PokemonCollectorTest.play2 Coverage Results" MODIFIED="1662743270303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ppp_demo$PokemonCollectorTest_play.ic" NAME="PokemonCollectorTest.play Coverage Results" MODIFIED="1662743812273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sttc_demo$BeanToEntityTest_toEntity.ic" NAME="BeanToEntityTest.toEntity Coverage Results" MODIFIED="1667374563487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sttc_demo$BeanToEntityTest.ic" NAME="BeanToEntityTest Coverage Results" MODIFIED="1668512891630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

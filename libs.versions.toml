@@ -6,7 +6,7 @@ kotlin-vavr = "0.10.2"
 jetbrains-annotations = "23.0.0"
 typeTools = "0.6.3"
 kover = "0.6.1"
-kotlin = "1.7.20"
+kotlin = "1.7.21"
 ksp = "1.7.20-1.0.7"
 detekt = "1.22.0-RC2"
 kotest = "5.5.2"
@@ -33,7 +33,7 @@ immutables = "2.9.2"
 exposed = "0.40.1"
 apache-log4j = "2.19.0"
 postgresql = "42.5.0"
-mockito = "4.8.1" # Using old version to be compatible with PowerMock
+mockito = "3.11.0" # Using old version to be compatible with PowerMock
 spring = "5.3.23"
 
 [libraries]

@@ -1,5 +1,3 @@
-@file:JvmName("AnyToAny")
-
 package ga.overfullstack.loki.dud
 
 import ga.overfullstack.loki.Utils.randomForPrimitiveType
@@ -27,5 +25,9 @@ object AnyToAny {
   @JvmStatic
   fun put(key: Any, value: Any) {
     anyToAnyCache[key] = value
+  }
+
+  fun clear() {
+    anyToAnyCache.clear()
   }
 }

@@ -7,7 +7,10 @@ import ga.overfullstack.pokemon.now.PokemonHttp;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
-/** This is an example for a module-specific Fake. */
+/**
+ * This is an example for a module-specific Fake. This makes use of the Dud layer to generate Fake
+ * data.
+ */
 @Component(POKEMON_HTTP_FAKE)
 public class PokemonHttpFake implements PokemonHttp {
   public static final String FAKE_RESPONSE_KEY = "FakeResponseKey";

@@ -1,5 +1,3 @@
-@file:JvmName("MultiAnyToAny")
-
 package ga.overfullstack.loki.dud
 
 import ga.overfullstack.loki.Utils.randomForPrimitiveType
@@ -23,6 +21,11 @@ object MultiAnyToAny {
   }
 
   @JvmStatic
-  fun <K : Any, P : Any, V : Any?> getCache(): Map<K, Map<P, V>> = pairOfAnyToAnyCache.map { (key, value) -> Triple(key.first as K, key.second as P, value as V) }
-    .groupBy({ it.first }, { Pair(it.second, it.third) }).mapValues { (_, value) -> value.toMap() }
+  fun <K : Any, P : Any, V : Any?> getCache(): Map<K, Map<P, V>> =
+    pairOfAnyToAnyCache.map { (key, value) -> Triple(key.first as K, key.second as P, value as V) }
+      .groupBy({ it.first }, { Pair(it.second, it.third) }).mapValues { (_, value) -> value.toMap() }
+
+  fun clear() {
+    pairOfAnyToAnyCache.clear()
+  }
 }

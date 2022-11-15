@@ -21,7 +21,7 @@ public class BeanToEntity {
           Pokemon::power, new Pair<>("power", false));
 
   public static Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
-    // Entity acts like a reference to a Row
+    // Entity acts like a reference to a Row in a table
     final var pokemonEntity = EntityLoader.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {

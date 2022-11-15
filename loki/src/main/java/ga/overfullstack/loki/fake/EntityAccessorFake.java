@@ -24,6 +24,6 @@ public class EntityAccessorFake implements EntityAccessor {
 
   @Override
   public String get(Entity entity, String field) {
-    return (String) MultiAnyToAny.get(entity, field);
+    return MultiAnyToAny.get(entity, field, String.class);
   }
 }

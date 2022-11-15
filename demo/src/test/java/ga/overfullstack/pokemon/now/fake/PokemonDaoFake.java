@@ -21,11 +21,12 @@ public class PokemonDaoFake implements PokemonDao {
 
   @Override
   public Map<String, String> queryPokemonPowers(List<String> ignore) {
-    return queryPokemonPowers();
+    return fakeInitStateOfPokemonPowers();
   }
 
   @NotNull
-  private static Map<String, String> queryPokemonPowers() {
+  private static Map<String, String> fakeInitStateOfPokemonPowers() {
+    // `skip(2)` below simulates 2 missing Pokémon in the DB
     return Stream.concat(
             AnyToAny.<String, String>getMap(FAKE_RESPONSE_KEY).entrySet().stream().skip(2),
             AnyToAny.getMap(FAKE_DB_RECORDS_KEY, String.class, String.class, 3).entrySet().stream())
@@ -34,8 +35,9 @@ public class PokemonDaoFake implements PokemonDao {
 
   @Override
   public Map<String, String> queryAllPokemonPowers() {
+    // Concat init state with the updates done
     return Stream.concat(
-            queryPokemonPowers().entrySet().stream(),
+            fakeInitStateOfPokemonPowers().entrySet().stream(),
             MultiAnyToAny.<String, String, String>getCache().values().stream()
                 .map(table -> Map.entry(table.get("name"), table.get("power"))))
         .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
