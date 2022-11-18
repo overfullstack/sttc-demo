@@ -1,11 +1,14 @@
 package ga.overfullstack.pokemon.now;
 
+import static ga.overfullstack.loki.BeanName.LOGGER_SUPPLIER_LOKI;
+
 import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.loki.LoggerSupplier;
 import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class PokemonCollector {
   private final PokemonDao pokemonDao;
   private final PokemonHttp pokemonHttp;
-  private final BeanToEntity beanToEntity;
+  private final BeanToEntityMapper beanToEntityMapper;
   private final Logger logger;
 
   public static void main(String[] args) throws LoadFromDBException {
@@ -26,11 +29,11 @@ public class PokemonCollector {
   public PokemonCollector(
       PokemonDao pokemonDao,
       PokemonHttp pokemonHttp,
-      BeanToEntity beanToEntity,
-      LoggerSupplier loggerSupplier) {
+      BeanToEntityMapper beanToEntityMapper,
+      @Qualifier(LOGGER_SUPPLIER_LOKI) LoggerSupplier loggerSupplier) {
     this.pokemonDao = pokemonDao;
     this.pokemonHttp = pokemonHttp;
-    this.beanToEntity = beanToEntity;
+    this.beanToEntityMapper = beanToEntityMapper;
     this.logger = loggerSupplier.supply(this.getClass());
   }
 
@@ -73,7 +76,7 @@ public class PokemonCollector {
 
     // Insert new fetched Pokémon into the DB.
     for (final var poke : newPokemonToInsert) {
-      beanToEntity.insertInDB(poke);
+      beanToEntityMapper.insertInDB(poke);
     }
 
     // Fetch all collected Pokémon in DB.

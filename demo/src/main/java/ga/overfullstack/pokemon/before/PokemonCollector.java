@@ -54,7 +54,7 @@ public class PokemonCollector {
 
     // Insert new fetched Pokémon into the DB.
     for (final var poke : pokemon) {
-      BeanToEntity.insertInDB(poke);
+      BeanToEntityMapper.insertInDB(poke);
     }
 
     // Fetch all collected Pokémon in DB.

@@ -15,12 +15,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanToEntity {
+public class BeanToEntityMapper {
   private final EntityAccessor entityAccessor;
   private final Logger logger;
 
   @Autowired
-  public BeanToEntity(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
+  public BeanToEntityMapper(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
     this.logger = loggerSupplier.supply(this.getClass());
   }
@@ -46,9 +46,10 @@ public class BeanToEntity {
     return pokemonEntity;
   }
 
+  // --- Quick play ---
   public static void main(String[] args) throws LoadFromDBException {
-    final var ctx = new AnnotationConfigApplicationContext(BeanToEntity.class);
-    final var beanToEntity = ctx.getBean(BeanToEntity.class);
+    final var ctx = new AnnotationConfigApplicationContext(BeanToEntityMapper.class);
+    final var beanToEntity = ctx.getBean(BeanToEntityMapper.class);
     beanToEntity.play();
   }
 

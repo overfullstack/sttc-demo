@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  * <li>MockStatic methods
  */
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({DBUtil.class, HttpUtil.class, BeanToEntity.class, LoggerFactory.class})
+@PrepareForTest({DBUtil.class, HttpUtil.class, BeanToEntityMapper.class, LoggerFactory.class})
 @SuppressStaticInitializationFor("ga.overfullstack.legacy.DBUtil")
 @PowerMockIgnore({
   "com.sun.org.apache.xerces.*",
@@ -46,7 +46,7 @@ public class PokemonCollectorTest {
   public void setUp() {
     PowerMockito.mockStatic(DBUtil.class);
     PowerMockito.mockStatic(HttpUtil.class);
-    PowerMockito.mockStatic(BeanToEntity.class);
+    PowerMockito.mockStatic(BeanToEntityMapper.class);
     PowerMockito.mockStatic(LoggerFactory.class);
     PowerMockito.when(LoggerFactory.getLogger(ArgumentMatchers.any(Class.class)))
         .thenAnswer(ignore -> PowerMockito.mock(Logger.class));
@@ -67,7 +67,7 @@ public class PokemonCollectorTest {
 
     PokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
 
-    PowerMockito.verifyStatic(BeanToEntity.class);
-    BeanToEntity.insertInDB(new Pokemon("pokemon2", "power2"));
+    PowerMockito.verifyStatic(BeanToEntityMapper.class);
+    BeanToEntityMapper.insertInDB(new Pokemon("pokemon2", "power2"));
   }
 }

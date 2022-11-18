@@ -19,6 +19,12 @@ public class Entity {
     return queryFromPokemon(id, field);
   }
 
+  /**
+   * `put` directly updates in the DB. May not be a popular pattern, and we generally use a `save()` or `commit()` call to update all fields at once. 
+   * But this is implemented just to demonstrate `put` as a legacy call.
+   * @param field
+   * @param value
+   */
   public void put(@NotNull String field, String value) {
     updatePokemon(id, field, value);
   }

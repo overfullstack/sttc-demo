@@ -25,14 +25,14 @@ import org.powermock.modules.junit4.PowerMockRunner;
   "javax.crypto.JceSecurity.*",
   "javax.crypto.*"
 })
-public class BeanToEntityTest {
+public class BeanToEntityMapperMapperTest {
 
   /**
-   * This test achieves 100% coverage without testing anything This doesn't test the behavior which
+   * <li>This test achieves 100% statement coverage without testing any behavior, which
    * is mapping fields from `pokemonBean` to `pokemonEntity` Instead, it returns a Mock on
    * `loadNew`, does nothing on `put`, does `when-thenReturn` on the Mock and asserts the same
-   * values to make the test pass Although this gives 100% test coverage, this doesn't detect a bug
-   * 🐞 in the code
+   * values to make the test pass.</li>
+   * <li>Although this gives 100% test coverage, this doesn't detect a bug 🐞 in the code</li>
    */
   @Test
   public void updateInDB() throws LoadFromDBException {
@@ -50,7 +50,7 @@ public class BeanToEntityTest {
     PowerMockito.when(mockPokemonEntity.get("name")).thenReturn("");
     PowerMockito.when(mockPokemonEntity.get("power")).thenReturn(pokemonBean.power());
 
-    final var actualPokemonEntity = BeanToEntity.insertInDB(pokemonBean);
+    final var actualPokemonEntity = BeanToEntityMapper.insertInDB(pokemonBean);
 
     // 👹 Assert on the same Mock entity from above
     assertEquals("", actualPokemonEntity.get("name"));

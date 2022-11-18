@@ -13,7 +13,7 @@ import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.loki.LoggerSupplier;
 import ga.overfullstack.loki.dud.AnyToAny;
 import ga.overfullstack.loki.dud.Dud;
-import ga.overfullstack.loki.fake.LokiConfig;
+import ga.overfullstack.loki.fake.LokiConfigForTest;
 import ga.overfullstack.pokemon.now.fake.config.ConfigForTest;
 import kotlin.collections.MapsKt;
 import org.junit.jupiter.api.AfterEach;
@@ -26,7 +26,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {LokiConfig.class, ConfigForTest.class, BeanToEntity.class})
+@ContextConfiguration(classes = {LokiConfigForTest.class, ConfigForTest.class, BeanToEntityMapper.class})
 class PokemonCollectorTest {
 
   @Autowired
@@ -42,7 +42,8 @@ class PokemonCollectorTest {
   PokemonDao pokemonDaoFake;
 
   // Fakes are injected transitively into this
-  @Autowired BeanToEntity beanToEntity;
+  @Autowired
+  BeanToEntityMapper beanToEntityMapper;
 
   @AfterEach
   void afterEach() {
@@ -53,7 +54,7 @@ class PokemonCollectorTest {
   @DisplayName("Collect Pokemon")
   void collectPokemon() throws LoadFromDBException {
     final var result =
-        new PokemonCollector(pokemonDaoFake, pokemonHttpFake, beanToEntity, loggerNoOpSupplier)
+        new PokemonCollector(pokemonDaoFake, pokemonHttpFake, beanToEntityMapper, loggerNoOpSupplier)
             .play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
     final var expectedResult =
         MapsKt.plus(
