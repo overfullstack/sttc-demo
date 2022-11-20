@@ -4,35 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="">
+    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Rename and add comments">
       <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/detekt.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2022-06-04T182143.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/my-github.sttc-demo.buildSrc.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/sttc-demo.buildSrc.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/BeanToEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/BeanToEntityMapperMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/ga/overfullstack/legacy/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/CoreConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/LokiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/LokiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/LokiConfigForTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +20,20 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
+      </list>
+    </option>
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/c388a68bc2b17a314dfa7c769d858ada0fc32dcf/guava-31.1-jre-sources.jar!/com/google/common/collect/StandardTable.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -68,6 +59,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
     "WebServerToolWindowFactoryState": "false",
     "com.github.patou.gitmoji.display-icon": "emoji",
     "com.github.patou.gitmoji.insert-in-cursor-position": "true",
@@ -76,11 +68,46 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.language.Kotlin",
-    "spring.configuration.checksum": "2e6b63a02064b6940fb12d13237ecc25",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "5e4073de362d3e8b676b96f951ddc579",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="ga.overfullstack.loki.dud" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PokemonCollectorTest.collectPokemon" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":demo:test" />
+            <option value="--tests" />
+            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest.collectPokemon&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.PokemonCollectorTest.collectPokemon" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -92,12 +119,46 @@
       <workItem from="1668517535668" duration="9002000" />
       <workItem from="1668621055849" duration="3717000" />
       <workItem from="1668670346011" duration="2752000" />
-      <workItem from="1668749916936" duration="7883000" />
+      <workItem from="1668749916936" duration="8615000" />
+      <workItem from="1668872234851" duration="3210000" />
     </task>
+    <task id="LOCAL-00001" summary="Rename and add comments">
+      <created>1668770292705</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668770292705</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Rename and add comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename and add comments" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java</url>
+          <line>41</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
