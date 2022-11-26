@@ -1,6 +1,6 @@
 package ga.overfullstack.pokemon.now.fake;
 
-import static ga.overfullstack.pokemon.now.fake.PokemonHttpFake.FAKE_RESPONSE_KEY;
+import static ga.overfullstack.pokemon.now.fake.PokemonHttpFake.HTTP_RESPONSE_EXISTING_POKEMON_FAKE_KEY;
 import static ga.overfullstack.pokemon.now.fake.config.BeanName.POKEMON_DAO_FAKE;
 
 import ga.overfullstack.loki.dud.AnyToAny;
@@ -11,33 +11,27 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 /** This is an example for a module-specific Fake. */
 @Component(POKEMON_DAO_FAKE)
 public class PokemonDaoFake implements PokemonDao {
-  public static final String FAKE_DB_RECORDS_KEY = "FakeDBRecordsKey";
+  public static final String INIT_DB_RECORDS_FAKE_KEY = "FakeDBRecordsKey";
 
   @Override
   public Map<String, String> queryPokemonPowers(List<String> ignore) {
-    return fakeInitStateOfPokemonPowers();
-  }
-
-  @NotNull
-  private static Map<String, String> fakeInitStateOfPokemonPowers() {
-    // `skip(2)` below simulates 2 missing Pokémon in the DB
-    return Stream.concat(
-            AnyToAny.<String, String>getMap(FAKE_RESPONSE_KEY).entrySet().stream().skip(2),
-            AnyToAny.getMap(FAKE_DB_RECORDS_KEY, String.class, String.class, 3).entrySet().stream())
-        .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
+    final var fakeDbRecords =
+        AnyToAny.getMap(INIT_DB_RECORDS_FAKE_KEY, String.class, String.class, 3);
+    // Simulating a Pokémon from HTTP response existing in DB through concatenation
+    fakeDbRecords.putAll(AnyToAny.getMap(HTTP_RESPONSE_EXISTING_POKEMON_FAKE_KEY));
+    return fakeDbRecords;
   }
 
   @Override
   public Map<String, String> queryAllPokemonPowers() {
-    // Concat init state with the updates done
+    // Concat init state with the updates via `EntityAccessorFake` to simulate entries in the DB
     return Stream.concat(
-            fakeInitStateOfPokemonPowers().entrySet().stream(),
+            AnyToAny.<String, String>getMap(INIT_DB_RECORDS_FAKE_KEY).entrySet().stream(),
             MultiAnyToAny.<String, String, String>getCache().values().stream()
                 .map(table -> Map.entry(table.get("name"), table.get("power"))))
         .collect(Collectors.toMap(Entry::getKey, Entry::getValue));

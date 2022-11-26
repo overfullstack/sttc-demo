@@ -10,17 +10,17 @@ object AnyToAny {
     anyToAnyCache.computeIfAbsent(key) { randomForPrimitiveType(valueType) } as T
 
   @JvmStatic
-  fun <K : Any, V : Any> getMap(key: Any, keyType: Class<K>, valueType: Class<V>, size: Int): Map<K, V> =
+  fun <K : Any, V : Any> getMap(key: Any, keyType: Class<K>, valueType: Class<V>, size: Int): MutableMap<K, V> =
     anyToAnyCache.computeIfAbsent(key) {
       buildMap(size) {
         repeat(size) {
           this[randomForPrimitiveType(keyType)] = randomForPrimitiveType(valueType)
         }
-      }
-    } as Map<K, V>
+      }.toMutableMap()
+    } as MutableMap<K, V>
 
   @JvmStatic
-  fun <K : Any, V : Any> getMap(key: Any): Map<K, V> = (anyToAnyCache[key] ?: emptyMap<K, V>()) as Map<K, V>
+  fun <K : Any, V : Any> getMap(key: Any): MutableMap<K, V> = (anyToAnyCache[key] ?: mutableMapOf<K, V>()) as MutableMap<K, V>
 
   @JvmStatic
   fun put(key: Any, value: Any) {

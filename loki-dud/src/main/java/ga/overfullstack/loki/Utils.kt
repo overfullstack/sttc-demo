@@ -30,5 +30,7 @@ object Utils {
         put(rowKey, colKey, newValue)
       }
       newValue
-    } else get(rowKey, colKey)
+    } else {
+      get(rowKey, colKey)
+    }
 }

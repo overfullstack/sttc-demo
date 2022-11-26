@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Migrate MultiAnyToAny to Guava table">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/Dud.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/Dud.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" afterDir="false" />
-    </list>
+    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Refactor the tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +28,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/c388a68bc2b17a314dfa7c769d858ada0fc32dcf/guava-31.1-jre-sources.jar!/com/google/common/collect/StandardTable.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/3.11.0/6cc165620837e1a3b7ed6959609044067eb93c8b/mockito-core-3.11.0-sources.jar!/org/mockito/internal/verification/VerificationModeFactory.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/core-public/tools/Darwin/jdk/openjdk_17.0.3_17.34.20_x64/zulu-17.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Map.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -60,33 +52,63 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
-    &quot;com.github.patou.gitmoji.insert-in-cursor-position&quot;: &quot;true&quot;,
-    &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;5e4073de362d3e8b676b96f951ddc579&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "com.github.patou.gitmoji.display-icon": "emoji",
+    "com.github.patou.gitmoji.insert-in-cursor-position": "true",
+    "com.github.patou.gitmoji.text-after-unicode": " ",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "spring.configuration.checksum": "5e4073de362d3e8b676b96f951ddc579",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="ga.overfullstack.loki.dud" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle spotlessApply" />
+      <command value="gradle clean build" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.sttc-demo [clean build]">
+    <configuration name="PokemonCollectorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":demo:test" />
+            <option value="--tests" />
+            <option value="&quot;ga.overfullstack.pokemon.before.PokemonCollectorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PokemonCollectorTest.collectPokemon" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -110,9 +132,79 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="PokemonCollectorTest.play" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":demo:test" />
+            <option value="--tests" />
+            <option value="&quot;ga.overfullstack.pokemon.before.PokemonCollectorTest.play&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sttc-demo [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sttc-demo [spotlessApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="spotlessApply" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PokemonCollectorTest.collectPokemon" />
+        <item itemvalue="Gradle.PokemonCollectorTest.play" />
+        <item itemvalue="Gradle.sttc-demo [spotlessApply]" />
+        <item itemvalue="Gradle.sttc-demo [clean build]" />
+        <item itemvalue="Gradle.PokemonCollectorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +222,10 @@
       <workItem from="1668749916936" duration="8615000" />
       <workItem from="1668872234851" duration="5138000" />
       <workItem from="1669441458803" duration="554000" />
-      <workItem from="1669442068402" duration="2978000" />
+      <workItem from="1669442068402" duration="8870000" />
+      <workItem from="1669454791893" duration="2423000" />
+      <workItem from="1669457349918" duration="75000" />
+      <workItem from="1669472307946" duration="3337000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and add comments">
       <created>1668770292705</created>
@@ -146,7 +241,28 @@
       <option name="project" value="LOCAL" />
       <updated>1668924311726</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Upgrade Java from 17 to 19">
+      <created>1669445262034</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669445262034</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor the tests">
+      <created>1669477085197</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669477085197</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor the tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;">
+      <created>1669477474806</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669477474806</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,29 +273,32 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Rename and add comments" />
     <MESSAGE value="Migrate MultiAnyToAny to Guava table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrate MultiAnyToAny to Guava table" />
+    <MESSAGE value="Upgrade Java from 17 to 19" />
+    <MESSAGE value="Refactor the tests" />
+    <MESSAGE value="Refactor the tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java</url>
-          <line>38</line>
+          <url>file://$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntityMapper.java</url>
+          <line>42</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java</url>
-          <line>41</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="AnyToAny.getMap(FAKE_DB_RECORDS_KEY)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sttc_demo$PokemonCollectorTest_play.ic" NAME="PokemonCollectorTest.play Coverage Results" MODIFIED="1669455433401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

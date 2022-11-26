@@ -10,21 +10,19 @@ import kotlin.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 /**
- * This Component directly interacts with Legacy Components
- * (Emulated here with classes from {@link ga.overfullstack.legacy} package from legacy module)
+ * This Component directly interacts with Legacy Components (Emulated here with classes from {@link
+ * ga.overfullstack.legacy} package from legacy module)
  */
-@Component
-public class BeanToEntityMapper {
+class BeanToEntityMapper {
   private static final Logger LOGGER = LoggerFactory.getLogger(BeanToEntityMapper.class);
   private static final Map<Function<Pokemon, String>, Pair<String, Boolean>> FIELD_MAPPINGS =
       Map.of( // FieldMapper, Pair(FieldName, isRequiredField)
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  public static Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  static Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     // Entity acts like a reference to a Row in a table
     final var pokemonEntity = EntityLoader.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(

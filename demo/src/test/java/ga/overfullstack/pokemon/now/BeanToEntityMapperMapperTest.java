@@ -20,8 +20,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ContextConfiguration(classes = {LokiConfigForTest.class, BeanToEntityMapper.class})
 class BeanToEntityMapperMapperTest {
 
-  @Autowired
-  BeanToEntityMapper beanToEntityMapper;
+  @Autowired BeanToEntityMapper beanToEntityMapper;
 
   @Autowired
   @Qualifier(ENTITY_ACCESSOR_LOKI_FAKE)

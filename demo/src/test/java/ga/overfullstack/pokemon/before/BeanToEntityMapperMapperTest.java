@@ -28,11 +28,12 @@ import org.powermock.modules.junit4.PowerMockRunner;
 public class BeanToEntityMapperMapperTest {
 
   /**
-   * <li>This test achieves 100% statement coverage without testing any behavior, which
-   * is mapping fields from `pokemonBean` to `pokemonEntity` Instead, it returns a Mock on
-   * `loadNew`, does nothing on `put`, does `when-thenReturn` on the Mock and asserts the same
-   * values to make the test pass.</li>
-   * <li>Although this gives 100% test coverage, this doesn't detect a bug 🐞 in the code</li>
+   *
+   * <li>This test achieves 100% statement coverage without testing any behavior, which is mapping
+   *     fields from `pokemonBean` to `pokemonEntity` Instead, it returns a Mock on `loadNew`, does
+   *     nothing on `put`, does `when-thenReturn` on the Mock and asserts the same values to make
+   *     the test pass.
+   * <li>Although this gives 100% test coverage, this doesn't detect a bug 🐞 in the code
    */
   @Test
   public void updateInDB() throws LoadFromDBException {

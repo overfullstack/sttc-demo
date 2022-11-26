@@ -10,29 +10,27 @@ import org.http4k.core.then
 import org.http4k.filter.ClientFilters
 import org.http4k.format.Moshi.auto
 
-private const val POKE_BASE_URI = "https://pokeapi.co/api/v2/"
+object HttpUtil {
+  private const val POKE_BASE_URI = "https://pokeapi.co/api/v2/"
 
-class HttpUtil {
-  companion object {
-    @JvmStatic
-    fun fetchAllPokemonNames(offset: Int, limit: Int): List<String> {
-      val resultsLens = Body.auto<Results>().toLens()
-      val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of(POKE_BASE_URI)).then(JavaHttpClient())
-      val response: Response = pokemonApi(
-        Request(Method.GET, "pokemon")
-          .query("offset", offset.toString())
-          .query("limit", limit.toString())
-      )
-      return resultsLens(response).results.map { it.name }
-    }
+  @JvmStatic
+  fun fetchAllPokemonNames(offset: Int, limit: Int): List<String> {
+    val resultsLens = Body.auto<Results>().toLens()
+    val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of(POKE_BASE_URI)).then(JavaHttpClient())
+    val response: Response = pokemonApi(
+      Request(Method.GET, "pokemon")
+        .query("offset", offset.toString())
+        .query("limit", limit.toString())
+    )
+    return resultsLens(response).results.map { it.name }
+  }
 
-    @JvmStatic
-    fun fetchPokemonPower(pokemonName: String): String {
-      val abilitiesLens = Body.auto<Abilities>().toLens()
-      val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of(POKE_BASE_URI)).then(JavaHttpClient())
-      val response: Response = pokemonApi(Request(Method.GET, "pokemon/$pokemonName"))
-      return abilitiesLens(response).abilities.first().ability.name
-    }
+  @JvmStatic
+  fun fetchPokemonPower(pokemonName: String): String {
+    val abilitiesLens = Body.auto<Abilities>().toLens()
+    val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of(POKE_BASE_URI)).then(JavaHttpClient())
+    val response: Response = pokemonApi(Request(Method.GET, "pokemon/$pokemonName"))
+    return abilitiesLens(response).abilities.first().ability.name
   }
 
   private data class Pokemon(val name: String)

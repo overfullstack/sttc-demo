@@ -13,13 +13,12 @@ public class PokemonCollector {
 
   private PokemonCollector() {}
 
-  public static void main(String[] args) throws LoadFromDBException {
+  public static void main(String[] args) {
     play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
   }
 
   /** POP (Procedure Oriented Programming) */
-  public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch)
-      throws LoadFromDBException {
+  public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 
     // Fetch all Pokémon names
@@ -47,14 +46,18 @@ public class PokemonCollector {
         "Fetch for {} missing Pokémon: {}", missingPokemonNames.size(), missingPokemonNames);
 
     // Fetch powers for missing Pokémon.
-    final var pokemon =
+    final var newPokemonToInsert =
         missingPokemonNames.stream()
             .map(pokemonName -> new Pokemon(pokemonName, HttpUtil.fetchPokemonPower(pokemonName)))
             .toList();
 
     // Insert new fetched Pokémon into the DB.
-    for (final var poke : pokemon) {
-      BeanToEntityMapper.insertInDB(poke);
+    for (final var pokemon : newPokemonToInsert) {
+      try {
+        BeanToEntityMapper.insertInDB(pokemon);
+      } catch (LoadFromDBException e) {
+        logger.error("Insertion failed for Pokémon: {}, with exception: {}", pokemon, e);
+      }
     }
 
     // Fetch all collected Pokémon in DB.

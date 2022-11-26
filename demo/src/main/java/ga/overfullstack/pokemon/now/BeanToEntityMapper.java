@@ -15,12 +15,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanToEntityMapper {
+class BeanToEntityMapper {
   private final EntityAccessor entityAccessor;
   private final Logger logger;
 
   @Autowired
-  public BeanToEntityMapper(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
+  BeanToEntityMapper(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
     this.logger = loggerSupplier.supply(this.getClass());
   }
@@ -30,7 +30,7 @@ public class BeanToEntityMapper {
           Pokemon::name, new Pair<>("name", true),
           Pokemon::power, new Pair<>("power", false));
 
-  public Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
+  Entity insertInDB(@NotNull Pokemon pokemon) throws LoadFromDBException {
     final var pokemonEntity = entityAccessor.loadNew(Entity.class);
     FIELD_MAPPINGS.forEach(
         (sourceFn, destPair) -> {

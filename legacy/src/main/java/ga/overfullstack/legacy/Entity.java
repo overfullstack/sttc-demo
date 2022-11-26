@@ -20,8 +20,10 @@ public class Entity {
   }
 
   /**
-   * `put` directly updates in the DB. May not be a popular pattern, and we generally use a `save()` or `commit()` call to update all fields at once. 
-   * But this is implemented just to demonstrate `put` as a legacy call.
+   * `put` directly updates in the DB. May not be a popular pattern, and we generally use a `save()`
+   * or `commit()` call to update all fields at once. But this is implemented just to demonstrate
+   * `put` as a legacy call.
+   *
    * @param field
    * @param value
    */

@@ -19,7 +19,7 @@ public class PokemonCollector {
   private final BeanToEntityMapper beanToEntityMapper;
   private final Logger logger;
 
-  public static void main(String[] args) throws LoadFromDBException {
+  public static void main(String[] args) {
     final var ctx = new AnnotationConfigApplicationContext(PokemonCollector.class);
     final var pokemonCollector = ctx.getBean(PokemonCollector.class);
     pokemonCollector.play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
@@ -37,8 +37,7 @@ public class PokemonCollector {
     this.logger = loggerSupplier.supply(this.getClass());
   }
 
-  public Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch)
-      throws LoadFromDBException {
+  public Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
 
     // Fetch all Pokémon
@@ -75,8 +74,12 @@ public class PokemonCollector {
             .toList();
 
     // Insert new fetched Pokémon into the DB.
-    for (final var poke : newPokemonToInsert) {
-      beanToEntityMapper.insertInDB(poke);
+    for (final var pokemon : newPokemonToInsert) {
+      try {
+        beanToEntityMapper.insertInDB(pokemon);
+      } catch (LoadFromDBException e) {
+        logger.error("Insertion failed for Pokémon: {}, with exception: {}", pokemon, e);
+      }
     }
 
     // Fetch all collected Pokémon in DB.
