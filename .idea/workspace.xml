@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Rename and add comments">
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Migrate MultiAnyToAny to Guava table">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/AnyToAny.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/Dud.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/Dud.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" beforeDir="false" afterPath="$PROJECT_DIR$/loki-dud/src/main/java/ga/overfullstack/loki/dud/MultiAnyToAny.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +38,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/c388a68bc2b17a314dfa7c769d858ada0fc32dcf/guava-31.1-jre-sources.jar!/com/google/common/collect/StandardTable.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/buildSrc/src/main/kotlin/sttc.root-conventions.gradle.kts" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,24 +60,27 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "com.github.patou.gitmoji.display-icon": "emoji",
-    "com.github.patou.gitmoji.insert-in-cursor-position": "true",
-    "com.github.patou.gitmoji.text-after-unicode": " ",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "5e4073de362d3e8b676b96f951ddc579",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
+    &quot;com.github.patou.gitmoji.insert-in-cursor-position&quot;: &quot;true&quot;,
+    &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5e4073de362d3e8b676b96f951ddc579&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="ga.overfullstack.loki.dud" />
@@ -120,7 +128,9 @@
       <workItem from="1668621055849" duration="3717000" />
       <workItem from="1668670346011" duration="2752000" />
       <workItem from="1668749916936" duration="8615000" />
-      <workItem from="1668872234851" duration="3210000" />
+      <workItem from="1668872234851" duration="5138000" />
+      <workItem from="1669441458803" duration="554000" />
+      <workItem from="1669442068402" duration="2978000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and add comments">
       <created>1668770292705</created>
@@ -129,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668770292705</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Migrate MultiAnyToAny to Guava table">
+      <created>1668924311726</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668924311726</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +156,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Rename and add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename and add comments" />
+    <MESSAGE value="Migrate MultiAnyToAny to Guava table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate MultiAnyToAny to Guava table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

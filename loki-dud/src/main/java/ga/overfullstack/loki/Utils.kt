@@ -1,6 +1,6 @@
 package ga.overfullstack.loki
 
-import com.google.common.collect.Table
+import com.google.common.collect.HashBasedTable
 import org.apache.commons.lang3.RandomStringUtils.randomAlphabetic
 import org.apache.commons.lang3.RandomStringUtils.randomNumeric
 import org.mockito.Mockito
@@ -19,14 +19,16 @@ object Utils {
     else -> Mockito.mock(type)
   } as T
 
-  fun <R : Any, C : Any, V : Any?> Table<R, C, V>.computeIfAbsent(
+  fun <R : Any, C : Any, V : Any> HashBasedTable<R, C, V>.computeIfAbsent(
     rowKey: R,
     colKey: C,
     mappingFunction: BiFunction<in R, in C, out V?>
   ): V? =
     if (!contains(rowKey, colKey)) {
       val newValue = mappingFunction.apply(rowKey, colKey)
-      put(rowKey, colKey, newValue)
+      if (newValue != null) {
+        put(rowKey, colKey, newValue)
+      }
       newValue
     } else get(rowKey, colKey)
 }
