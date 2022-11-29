@@ -13,10 +13,6 @@ public class PokemonCollector {
 
   private PokemonCollector() {}
 
-  public static void main(String[] args) {
-    play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
-  }
-
   /** POP (Procedure Oriented Programming) */
   public static Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     validate(pokemonOffsetToFetch, pokemonLimitToFetch);
@@ -27,7 +23,7 @@ public class PokemonCollector {
     logger.info("Pokémon fetched: {}", fetchedPokemonNames);
 
     if (fetchedPokemonNames.isEmpty()) {
-      return Map.of();
+      return DBUtil.queryAllPokemonWithPowers();
     }
 
     // Find DB match for fetched Pokémon.
@@ -75,5 +71,10 @@ public class PokemonCollector {
               + ", limit="
               + pokemonLimitToFetch);
     }
+  }
+
+  // -- Quick play --
+  public static void main(String[] args) {
+    play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
   }
 }

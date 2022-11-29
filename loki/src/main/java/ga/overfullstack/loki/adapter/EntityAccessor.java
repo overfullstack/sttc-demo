@@ -1,4 +1,4 @@
-package ga.overfullstack.loki;
+package ga.overfullstack.loki.adapter;
 
 import static ga.overfullstack.loki.BeanName.ENTITY_ACCESSOR_LOKI;
 

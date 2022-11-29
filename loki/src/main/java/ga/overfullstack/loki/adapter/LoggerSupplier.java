@@ -1,4 +1,4 @@
-package ga.overfullstack.loki;
+package ga.overfullstack.loki.adapter;
 
 import org.slf4j.Logger;
 

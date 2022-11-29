@@ -1,8 +1,8 @@
-package ga.overfullstack.loki.fake;
+package ga.overfullstack.loki.fake.adapter;
 
 import static ga.overfullstack.loki.fake.BeanName.LOGGER_NO_OP_SUPPLIER_LOKI;
 
-import ga.overfullstack.loki.LoggerSupplier;
+import ga.overfullstack.loki.adapter.LoggerSupplier;
 import org.mockito.Mockito;
 import org.slf4j.Logger;
 import org.springframework.context.annotation.Bean;

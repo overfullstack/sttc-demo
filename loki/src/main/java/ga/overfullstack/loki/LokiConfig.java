@@ -2,6 +2,8 @@ package ga.overfullstack.loki;
 
 import static ga.overfullstack.loki.BeanName.LOGGER_SUPPLIER_LOKI;
 
+import ga.overfullstack.loki.adapter.EntityAccessor;
+import ga.overfullstack.loki.adapter.LoggerSupplier;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

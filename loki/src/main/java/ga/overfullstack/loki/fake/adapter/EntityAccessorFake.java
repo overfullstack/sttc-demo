@@ -1,9 +1,9 @@
-package ga.overfullstack.loki.fake;
+package ga.overfullstack.loki.fake.adapter;
 
 import static ga.overfullstack.loki.fake.BeanName.ENTITY_ACCESSOR_LOKI_FAKE;
 
 import ga.overfullstack.legacy.Entity;
-import ga.overfullstack.loki.EntityAccessor;
+import ga.overfullstack.loki.adapter.EntityAccessor;
 import ga.overfullstack.loki.dud.MultiAnyToAny;
 import org.mockito.Mockito;
 import org.springframework.stereotype.Component;

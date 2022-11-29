@@ -1,9 +1,11 @@
 package ga.overfullstack.pokemon.now;
 
+import static ga.overfullstack.pokemon.now.Config.ENTITY_ACCESSOR_EXTENDED;
+
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.LoadFromDBException;
-import ga.overfullstack.loki.EntityAccessor;
-import ga.overfullstack.loki.LoggerSupplier;
+import ga.overfullstack.loki.adapter.EntityAccessor;
+import ga.overfullstack.loki.adapter.LoggerSupplier;
 import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
 import java.util.function.Function;
@@ -11,6 +13,7 @@ import kotlin.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +23,9 @@ class BeanToEntityMapper {
   private final Logger logger;
 
   @Autowired
-  BeanToEntityMapper(EntityAccessor entityAccessor, LoggerSupplier loggerSupplier) {
+  BeanToEntityMapper(
+      @Qualifier(ENTITY_ACCESSOR_EXTENDED) EntityAccessor entityAccessor,
+      LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
     this.logger = loggerSupplier.supply(this.getClass());
   }

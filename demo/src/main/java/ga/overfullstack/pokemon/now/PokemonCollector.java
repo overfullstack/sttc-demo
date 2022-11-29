@@ -3,7 +3,7 @@ package ga.overfullstack.pokemon.now;
 import static ga.overfullstack.loki.BeanName.LOGGER_SUPPLIER_LOKI;
 
 import ga.overfullstack.legacy.LoadFromDBException;
-import ga.overfullstack.loki.LoggerSupplier;
+import ga.overfullstack.loki.adapter.LoggerSupplier;
 import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -18,12 +18,6 @@ public class PokemonCollector {
   private final PokemonHttp pokemonHttp;
   private final BeanToEntityMapper beanToEntityMapper;
   private final Logger logger;
-
-  public static void main(String[] args) {
-    final var ctx = new AnnotationConfigApplicationContext(PokemonCollector.class);
-    final var pokemonCollector = ctx.getBean(PokemonCollector.class);
-    pokemonCollector.play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
-  }
 
   @Autowired
   public PokemonCollector(
@@ -46,7 +40,7 @@ public class PokemonCollector {
     logger.info("Pokémon fetched: {}", fetchedPokemonNames);
 
     if (fetchedPokemonNames.isEmpty()) {
-      return Map.of();
+      return pokemonDao.queryAllPokemonPowers();
     }
 
     // Find DB match for fetched Pokémon.
@@ -103,5 +97,12 @@ public class PokemonCollector {
               + ", limit="
               + pokemonLimitToFetch);
     }
+  }
+
+  // -- Quick Play --
+  public static void main(String[] args) {
+    final var ctx = new AnnotationConfigApplicationContext(PokemonCollector.class);
+    final var pokemonCollector = ctx.getBean(PokemonCollector.class);
+    pokemonCollector.play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
   }
 }
