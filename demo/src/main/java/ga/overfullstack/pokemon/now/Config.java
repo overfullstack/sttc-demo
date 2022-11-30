@@ -1,7 +1,6 @@
 package ga.overfullstack.pokemon.now;
 
 import static ga.overfullstack.loki.BeanName.LOGGER_SUPPLIER_LOKI;
-import static java.lang.StackWalker.Option.RETAIN_CLASS_REFERENCE;
 
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.LoadFromDBException;
@@ -14,10 +13,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import(LokiConfig.class)
+@Import({LokiConfig.class, PokemonCollector.class, BeanToEntityMapper.class})
 class Config {
   public static final String ENTITY_ACCESSOR_EXTENDED = "EntityAccessorExtended";
-  public static final StackWalker STACK_WALKER = StackWalker.getInstance(RETAIN_CLASS_REFERENCE);
 
   @Bean(ENTITY_ACCESSOR_EXTENDED)
   EntityAccessor entityAccessorExtended(
@@ -25,11 +23,19 @@ class Config {
     return new EntityAccessor() {
       @Override
       public <T extends Entity> T loadNew(Class<T> type) throws LoadFromDBException {
-        loggerSupplier
-            .supply(STACK_WALKER.getCallerClass())
-            .info("Loading class of type: {}", type);
+        loggerSupplier.supply().info("Loading class of type: {}", type);
         return EntityAccessor.super.loadNew(type);
       }
     };
+  }
+
+  @Bean
+  PokemonHttp pokemonHttp() {
+    return new PokemonHttp() {};
+  }
+
+  @Bean
+  PokemonDao pokemonDao() {
+    return new PokemonDao() {};
   }
 }

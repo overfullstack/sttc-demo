@@ -14,6 +14,11 @@ import org.springframework.context.annotation.Import;
 public class LokiConfigForTest {
   @Bean(LOGGER_NO_OP_SUPPLIER_LOKI)
   public LoggerSupplier loggerSupplier() {
-    return ignore -> Mockito.mock(Logger.class);
+    return new LoggerSupplier() {
+      @Override
+      public Logger supply() {
+        return Mockito.mock(Logger.class);
+      }
+    };
   }
 }

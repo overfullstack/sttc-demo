@@ -2,8 +2,8 @@ package ga.overfullstack.pokemon.now;
 
 import static ga.overfullstack.loki.fake.BeanName.ENTITY_ACCESSOR_LOKI_FAKE;
 import static ga.overfullstack.loki.fake.BeanName.LOGGER_NO_OP_SUPPLIER_LOKI;
-import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
-import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
+import static ga.overfullstack.pokemon.now.PokemonCollector.POKEMON_LIMIT_TO_FETCH;
+import static ga.overfullstack.pokemon.now.PokemonCollector.POKEMON_OFFSET_TO_FETCH;
 import static ga.overfullstack.pokemon.now.fake.PokemonDaoFake.INIT_DB_RECORDS_FAKE_KEY;
 import static ga.overfullstack.pokemon.now.fake.PokemonHttpFake.HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY;
 import static ga.overfullstack.pokemon.now.fake.config.BeanName.POKEMON_DAO_FAKE;
@@ -72,7 +72,8 @@ class PokemonCollectorTest {
         new PokemonCollector(
                 pokemonDaoFake, pokemonHttpFake, beanToEntityMapperFake, loggerNoOpSupplier)
             .play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
-    // No need to assert on Method interactions as we can precisely assert data inserted via EntityAccessor
+    // No need to assert on Method interactions as we can precisely assert data inserted via
+    // EntityAccessor
     assertThat(PokemonDaoFake.getDataInsertedViaEntityAccessor())
         .containsExactlyInAnyOrderEntriesOf(AnyToAny.getMap(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY));
     final var expectedResult = // Init DB records + New Pokemon from response

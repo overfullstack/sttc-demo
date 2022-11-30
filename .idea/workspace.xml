@@ -4,15 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Extend Adapters and Fakes demo&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/sttc-demo.iml" afterDir="false" />
+    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake">
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2022-11-30T192920.200.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2022-11-30T193047.200.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonHttpFake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/config/ConfigForTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/LokiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/LokiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/EntityAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/EntityAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/LoggerSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/LoggerSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/adapter/LokiConfigForTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/adapter/LokiConfigForTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +37,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,8 +111,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.smartKeys",
-    "spring.configuration.checksum": "356bc7500424b77af47e09aa23711de2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "78d19b7068fdbcefec7440278e96d1df",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,12 +128,12 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="gradle clean build" />
       <command value="gradle spotlessApply" />
+      <command value="gradle clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.sttc-demo [spotlessApply]">
-    <configuration name="PokemonCollectorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.sttc-demo [clean build]">
+    <configuration name="sttc-demo [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -120,83 +144,13 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":demo:test" />
-            <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest&quot;" />
+            <option value="clean" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PokemonCollectorTest.collectPokemon" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":demo:test" />
-            <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest.collectPokemon&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PokemonCollectorTest.emptyHttpResponseShouldNotAddNewPokemon" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":demo:test" />
-            <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest.emptyHttpResponseShouldNotAddNewPokemon&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PokemonCollectorTest.loadFromDbThrows" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":demo:test" />
-            <option value="--tests" />
-            <option value="&quot;ga.overfullstack.pokemon.now.PokemonCollectorTest.loadFromDbThrows&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -222,13 +176,34 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="pokemon | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/demo/src/test/resources/pokemon.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="App (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ga.overfullstack.pokemon.before.App" />
+      <module name="sttc-demo.demo.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ga.overfullstack.pokemon.now.App" />
+      <module name="sttc-demo.demo.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PokemonCollectorTest.collectPokemon" />
-        <item itemvalue="Gradle.PokemonCollectorTest" />
+        <item itemvalue="Gradle.sttc-demo [clean build]" />
         <item itemvalue="Gradle.sttc-demo [spotlessApply]" />
-        <item itemvalue="Gradle.PokemonCollectorTest.emptyHttpResponseShouldNotAddNewPokemon" />
-        <item itemvalue="Gradle.PokemonCollectorTest.loadFromDbThrows" />
+        <item itemvalue="HTTP Request.pokemon | #1" />
+        <item itemvalue="Kotlin.App (1)" />
+        <item itemvalue="Kotlin.App" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +228,8 @@
       <workItem from="1669621114081" duration="2624000" />
       <workItem from="1669628391494" duration="12740000" />
       <workItem from="1669699793363" duration="13468000" />
-      <workItem from="1669792767728" duration="633000" />
+      <workItem from="1669792767728" duration="1621000" />
+      <workItem from="1669794433402" duration="5940000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and add comments">
       <created>1668770292705</created>
@@ -318,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669699643509</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake">
+      <created>1669793527813</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669793527814</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +316,8 @@
     <MESSAGE value="Refactor the tests" />
     <MESSAGE value="Refactor the tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
     <MESSAGE value="Extend Adapters and Fakes demo&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extend Adapters and Fakes demo&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
+    <MESSAGE value="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

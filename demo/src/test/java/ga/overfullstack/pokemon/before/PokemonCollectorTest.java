@@ -1,7 +1,7 @@
 package ga.overfullstack.pokemon.before;
 
-import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
-import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
+import static ga.overfullstack.pokemon.before.PokemonCollector.POKEMON_LIMIT_TO_FETCH;
+import static ga.overfullstack.pokemon.before.PokemonCollector.POKEMON_OFFSET_TO_FETCH;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 import static org.powermock.api.mockito.PowerMockito.when;

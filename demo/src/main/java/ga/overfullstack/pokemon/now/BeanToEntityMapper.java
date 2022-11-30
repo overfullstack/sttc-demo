@@ -27,7 +27,7 @@ class BeanToEntityMapper {
       @Qualifier(ENTITY_ACCESSOR_EXTENDED) EntityAccessor entityAccessor,
       LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
-    this.logger = loggerSupplier.supply(this.getClass());
+    this.logger = loggerSupplier.supply();
   }
 
   private static final Map<Function<Pokemon, String>, Pair<String, Boolean>> FIELD_MAPPINGS =
@@ -53,7 +53,7 @@ class BeanToEntityMapper {
 
   // --- Quick play ---
   public static void main(String[] args) throws LoadFromDBException {
-    final var ctx = new AnnotationConfigApplicationContext(BeanToEntityMapper.class);
+    final var ctx = new AnnotationConfigApplicationContext(Config.class);
     final var beanToEntity = ctx.getBean(BeanToEntityMapper.class);
     beanToEntity.play();
   }

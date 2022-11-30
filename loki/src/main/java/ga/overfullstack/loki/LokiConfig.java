@@ -1,20 +1,23 @@
 package ga.overfullstack.loki;
 
+import static ga.overfullstack.loki.BeanName.ENTITY_ACCESSOR_LOKI;
 import static ga.overfullstack.loki.BeanName.LOGGER_SUPPLIER_LOKI;
 
 import ga.overfullstack.loki.adapter.EntityAccessor;
 import ga.overfullstack.loki.adapter.LoggerSupplier;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({EntityAccessor.class})
 public class LokiConfig {
 
   @Bean(LOGGER_SUPPLIER_LOKI)
   public LoggerSupplier loggerSupplier() {
-    return LoggerFactory::getLogger;
+    return new LoggerSupplier() {};
+  }
+
+  @Bean(ENTITY_ACCESSOR_LOKI)
+  public EntityAccessor entityAccessor() {
+    return new EntityAccessor() {};
   }
 }

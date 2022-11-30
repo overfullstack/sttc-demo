@@ -5,10 +5,14 @@ import ga.overfullstack.legacy.HttpUtil;
 import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
+import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PokemonCollector {
+  private static final Random random = new Random();
+  public static final int POKEMON_OFFSET_TO_FETCH = random.ints(1, 100).findFirst().orElse(1);
+  public static final int POKEMON_LIMIT_TO_FETCH = random.ints(1, 6).findFirst().orElse(1);
   private static final Logger logger = LoggerFactory.getLogger(PokemonCollector.class);
 
   private PokemonCollector() {}
@@ -75,6 +79,6 @@ public class PokemonCollector {
 
   // -- Quick play --
   public static void main(String[] args) {
-    play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
+    play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
   }
 }

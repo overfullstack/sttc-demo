@@ -6,6 +6,7 @@ import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.loki.adapter.LoggerSupplier;
 import ga.overfullstack.pokemon.Pokemon;
 import java.util.Map;
+import java.util.Random;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,6 +15,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PokemonCollector {
+
+  private static final Random random = new Random();
+  public static final int POKEMON_OFFSET_TO_FETCH = random.ints(1, 100).findFirst().orElse(1);
+  public static final int POKEMON_LIMIT_TO_FETCH = random.ints(1, 6).findFirst().orElse(1);
   private final PokemonDao pokemonDao;
   private final PokemonHttp pokemonHttp;
   private final BeanToEntityMapper beanToEntityMapper;
@@ -28,7 +33,7 @@ public class PokemonCollector {
     this.pokemonDao = pokemonDao;
     this.pokemonHttp = pokemonHttp;
     this.beanToEntityMapper = beanToEntityMapper;
-    this.logger = loggerSupplier.supply(this.getClass());
+    this.logger = loggerSupplier.supply();
   }
 
   public Map<String, String> play(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
@@ -83,12 +88,7 @@ public class PokemonCollector {
     return allPokemonWithPowers;
   }
 
-  /**
-   * No side-effects, so no need to create a Validator class for this function
-   *
-   * @param pokemonOffsetToFetch
-   * @param pokemonLimitToFetch
-   */
+  /** No side-effects, so no need to create a Validator class for this function */
   static void validate(int pokemonOffsetToFetch, int pokemonLimitToFetch) {
     if (pokemonOffsetToFetch < 0 || pokemonLimitToFetch < 0 || pokemonLimitToFetch > 10) {
       throw new IllegalArgumentException(
@@ -101,8 +101,8 @@ public class PokemonCollector {
 
   // -- Quick Play --
   public static void main(String[] args) {
-    final var ctx = new AnnotationConfigApplicationContext(PokemonCollector.class);
+    final var ctx = new AnnotationConfigApplicationContext(Config.class);
     final var pokemonCollector = ctx.getBean(PokemonCollector.class);
-    pokemonCollector.play(App.POKEMON_OFFSET_TO_FETCH, App.POKEMON_LIMIT_TO_FETCH);
+    pokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
   }
 }
