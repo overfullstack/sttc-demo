@@ -11,8 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 /**
- * This is an example for a module-specific Fake. This makes use of the Dud layer to generate Fake
- * data.
+ * This is an example for a module-specific Fake. This makes use of the Dud to generate Fake data.
  */
 @Component(POKEMON_HTTP_FAKE)
 public class PokemonHttpFake implements PokemonHttp {
@@ -25,6 +24,10 @@ public class PokemonHttpFake implements PokemonHttp {
     return generateFakePokemonResponse().keySet().stream().toList();
   }
 
+  /**
+   * Fake Response is concatenation of both (HTTP_RESPONSE_EXISTING_POKEMON_FAKE_KEY +
+   * HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY)
+   */
   @NotNull
   private static Map<String, String> generateFakePokemonResponse() {
     return MapsKt.plus(

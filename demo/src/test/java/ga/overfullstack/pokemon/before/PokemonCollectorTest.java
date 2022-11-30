@@ -3,6 +3,7 @@ package ga.overfullstack.pokemon.before;
 import static ga.overfullstack.pokemon.before.App.POKEMON_LIMIT_TO_FETCH;
 import static ga.overfullstack.pokemon.before.App.POKEMON_OFFSET_TO_FETCH;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 import static org.powermock.api.mockito.PowerMockito.when;
 
 import ga.overfullstack.legacy.DBUtil;
@@ -15,7 +16,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
-import org.mockito.internal.verification.VerificationModeFactory;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -59,14 +59,14 @@ public class PokemonCollectorTest {
     final var pokemonFromNetworkFake = List.of("pokemon1", "pokemon2", "pokemon3");
     when(HttpUtil.fetchAllPokemonNames(ArgumentMatchers.anyInt(), ArgumentMatchers.anyInt()))
         .thenAnswer(ignore -> pokemonFromNetworkFake);
-    final var pokemonWithPowerFromDBFake = Map.of("pokemon2", "power2");
     when(DBUtil.queryPokemonPowers(pokemonFromNetworkFake))
-        .thenAnswer(ignore -> pokemonWithPowerFromDBFake);
+        .thenAnswer(ignore -> Map.of("pokemon2", "power2"));
     final var expectedResult =
         Map.of(
             "pokemon1", "power1",
             "pokemon2", "power2",
             "pokemon3", "power3");
+    // 👹 Set the expected result
     when(DBUtil.queryAllPokemonWithPowers()).thenAnswer(ignore -> expectedResult);
     when(HttpUtil.fetchPokemonPower("pokemon1"))
         .thenAnswer(ignore -> expectedResult.get("pokemon1"));
@@ -76,14 +76,13 @@ public class PokemonCollectorTest {
     final var result = PokemonCollector.play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
 
     // Verify specific `static` method interactions
-    PowerMockito.verifyStatic(BeanToEntityMapper.class, VerificationModeFactory.times(1));
+    PowerMockito.verifyStatic(BeanToEntityMapper.class, times(1));
     BeanToEntityMapper.insertInDB(new Pokemon("pokemon1", "power1"));
-
-    PowerMockito.verifyStatic(BeanToEntityMapper.class, VerificationModeFactory.times(1));
+    PowerMockito.verifyStatic(BeanToEntityMapper.class, times(1));
     BeanToEntityMapper.insertInDB(new Pokemon("pokemon3", "power3"));
-
     PowerMockito.verifyNoMoreInteractions(BeanToEntityMapper.class);
 
+    // 👹 Assert the same result set through `when-then` above
     assertThat(result).containsExactlyInAnyOrderEntriesOf(expectedResult);
   }
 }
