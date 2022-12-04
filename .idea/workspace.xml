@@ -4,29 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake">
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2022-11-30T192920.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2022-11-30T193047.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="745440b9-d19a-4d05-bc18-3e9d1be77d89" name="Changes" comment="Segregated Demo before and now into different modules">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/93a535bf-156b-409c-b0ed-9e43c81fbef1/storage_v2/_src_/database/pokemon.0zw36A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/93a535bf-156b-409c-b0ed-9e43c81fbef1/storage_v2/_src_/database/pokemon.0zw36A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/before/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/BeanToEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/ga/overfullstack/pokemon/now/PokemonHttp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/before/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/BeanToEntityMapperMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/PokemonCollectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/ga/overfullstack/pokemon/now/fake/PokemonDaoFake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/LokiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/LokiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/EntityAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/EntityAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/LoggerSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/adapter/LoggerSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/adapter/LokiConfigForTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loki/src/main/java/ga/overfullstack/loki/fake/adapter/LokiConfigForTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-before/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/demo-before/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-before/src/main/java/ga/overfullstack/before/BeanToEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-before/src/main/java/ga/overfullstack/before/BeanToEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-now/src/main/java/ga/overfullstack/pokemon/now/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo-now/src/main/java/ga/overfullstack/pokemon/now/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-now/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-now/src/main/java/ga/overfullstack/pokemon/now/PokemonCollector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +28,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sttc-demo" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -103,6 +97,8 @@
     "com.github.patou.gitmoji.display-icon": "emoji",
     "com.github.patou.gitmoji.insert-in-cursor-position": "true",
     "com.github.patou.gitmoji.text-after-unicode": " ",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/gopala.akshintala/code-clones/my-github/sttc-demo/demo-before/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -111,9 +107,14 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "78d19b7068fdbcefec7440278e96d1df",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "0368113717ee43d5404c6c69f838a07a",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="Push.Settings">
@@ -122,6 +123,10 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/demo-before/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="ga.overfullstack.loki.dud" />
     </key>
@@ -194,16 +199,18 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.sttc-demo [clean build]" />
-        <item itemvalue="Gradle.sttc-demo [spotlessApply]" />
-        <item itemvalue="HTTP Request.pokemon | #1" />
-        <item itemvalue="Kotlin.App (1)" />
         <item itemvalue="Kotlin.App" />
+        <item itemvalue="Kotlin.App (1)" />
+        <item itemvalue="HTTP Request.pokemon | #1" />
+        <item itemvalue="Gradle.sttc-demo [spotlessApply]" />
+        <item itemvalue="Gradle.sttc-demo [clean build]" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +236,12 @@
       <workItem from="1669628391494" duration="12740000" />
       <workItem from="1669699793363" duration="13468000" />
       <workItem from="1669792767728" duration="1621000" />
-      <workItem from="1669794433402" duration="5940000" />
+      <workItem from="1669794433402" duration="6303000" />
+      <workItem from="1669875629267" duration="1069000" />
+      <workItem from="1670137398532" duration="424000" />
+      <workItem from="1670138656024" duration="2716000" />
+      <workItem from="1670147490908" duration="5132000" />
+      <workItem from="1670221355712" duration="936000" />
     </task>
     <task id="LOCAL-00001" summary="Rename and add comments">
       <created>1668770292705</created>
@@ -301,7 +313,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669793527814</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix autowiring issues">
+      <created>1669817850737</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669817850737</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Segregated Demo before and now into different modules">
+      <created>1670168302927</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670168302927</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +343,9 @@
     <MESSAGE value="Refactor the tests&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
     <MESSAGE value="Extend Adapters and Fakes demo&#10;&#10;Signed-off-by: Gopal S Akshintala &lt;gopala.akshintala@salesforce.com&gt;" />
     <MESSAGE value="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Remove spy from now/PokemonCollectorTest&#10;- Minor refactoring in PokemonDaoFake" />
+    <MESSAGE value="Fix autowiring issues" />
+    <MESSAGE value="Segregated Demo before and now into different modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Segregated Demo before and now into different modules" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -14,7 +14,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/demo" />
+            <option value="$PROJECT_DIR$/demo-before" />
+            <option value="$PROJECT_DIR$/demo-now" />
             <option value="$PROJECT_DIR$/legacy" />
             <option value="$PROJECT_DIR$/loki" />
             <option value="$PROJECT_DIR$/loki-dud" />

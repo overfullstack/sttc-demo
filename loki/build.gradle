@@ -1,5 +1,5 @@
 dependencies {
-  implementation(project(":legacy"))
+  api(project(":legacy"))
   api(project(":loki-dud"))
   implementation(libs.bundles.spring)
   implementation(libs.bundles.apache.log4j)
