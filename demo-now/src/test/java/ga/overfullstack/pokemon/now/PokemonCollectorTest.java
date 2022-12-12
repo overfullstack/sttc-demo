@@ -72,7 +72,8 @@ class PokemonCollectorTest {
         new PokemonCollector(
                 pokemonDaoFake, pokemonHttpFake, beanToEntityMapperFake, loggerNoOpSupplier)
             .play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
-    // No need to assert on Method interactions as we can precisely assert data inserted via
+    // No need to assert on internal details like Method interactions, as we can precisely assert
+    // data inserted via
     // EntityAccessor
     assertThat(PokemonDaoFake.getDataInsertedViaEntityAccessor())
         .containsExactlyInAnyOrderEntriesOf(AnyToAny.getMap(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY));

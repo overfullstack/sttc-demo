@@ -12,9 +12,11 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({EntityLoader.class})
+@PrepareForTest({EntityLoader.class, LoggerFactory.class})
 @PowerMockIgnore({ // To make PowerMock work with the latest Java version
   "com.sun.org.apache.xerces.*",
   "javax.xml.*",
@@ -36,6 +38,9 @@ public class BeanToEntityMapperMapperTest {
    */
   @Test
   public void updateInDB() throws LoadFromDBException {
+    PowerMockito.mockStatic(LoggerFactory.class);
+    PowerMockito.when(LoggerFactory.getLogger(ArgumentMatchers.any(Class.class)))
+        .thenAnswer(ignore -> PowerMockito.mock(Logger.class));
     PowerMockito.mockStatic(EntityLoader.class);
     // 👹 Return a Mock entity on `loadNew`
     final var mockPokemonEntity = PowerMockito.mock(Entity.class);

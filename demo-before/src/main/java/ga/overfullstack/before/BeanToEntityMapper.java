@@ -31,6 +31,7 @@ class BeanToEntityMapper {
           final var fieldName = destPair.getFirst();
           final boolean isFieldRequired = destPair.getSecond();
           if (isFieldRequired && sourceValue == null) {
+            LOGGER.info("Required field {} is null, replacing with empty string", fieldName);
             pokemonEntity.put(fieldName, "");
           }
           pokemonEntity.put(fieldName, sourceValue); // 🐞 should be in else block

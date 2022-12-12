@@ -1,6 +1,5 @@
 import com.adarshr.gradle.testlogger.theme.ThemeType
 import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep.XML
-import gradle.kotlin.dsl.accessors._2e7c48f5c5e053e2f48db1b0d2cf7734.java
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektPlugin
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
