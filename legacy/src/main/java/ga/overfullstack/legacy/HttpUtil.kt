@@ -13,6 +13,9 @@ import org.http4k.format.Moshi.auto
 object HttpUtil {
   private const val POKE_BASE_URI = "https://pokeapi.co/api/v2/"
 
+  /**
+   * Fetch Pokémon names from HTTP based on random offset and limit
+   */
   @JvmStatic
   fun fetchAllPokemonNames(offset: Int, limit: Int): List<String> {
     val resultsLens = Body.auto<Results>().toLens()

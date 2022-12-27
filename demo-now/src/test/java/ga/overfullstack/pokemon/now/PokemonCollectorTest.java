@@ -6,15 +6,15 @@ import static ga.overfullstack.pokemon.now.PokemonCollector.POKEMON_LIMIT_TO_FET
 import static ga.overfullstack.pokemon.now.PokemonCollector.POKEMON_OFFSET_TO_FETCH;
 import static ga.overfullstack.pokemon.now.fake.PokemonDaoFake.INIT_DB_RECORDS_FAKE_KEY;
 import static ga.overfullstack.pokemon.now.fake.PokemonHttpFake.HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY;
-import static ga.overfullstack.pokemon.now.fake.config.BeanName.POKEMON_DAO_FAKE;
-import static ga.overfullstack.pokemon.now.fake.config.BeanName.POKEMON_HTTP_FAKE;
+import static ga.overfullstack.pokemon.now.fake.TestConstants.POKEMON_DAO_FAKE;
+import static ga.overfullstack.pokemon.now.fake.TestConstants.POKEMON_HTTP_FAKE;
+import static ga.overfullstack.pokemon.now.fake.TestConstants.tableToPokemonMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import ga.overfullstack.legacy.Entity;
 import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.loki.adapter.EntityAccessor;
 import ga.overfullstack.loki.adapter.LoggerSupplier;
-import ga.overfullstack.loki.dud.AnyToAny;
 import ga.overfullstack.loki.dud.Dud;
 import ga.overfullstack.loki.fake.adapter.LokiConfigForTest;
 import ga.overfullstack.pokemon.now.fake.PokemonDaoFake;
@@ -66,21 +66,20 @@ class PokemonCollectorTest {
   }
 
   @Test
-  @DisplayName("Collect Pokemon")
+  @DisplayName("Collect Pokémon")
   void collectPokemon() {
     final var result =
         new PokemonCollector(
                 pokemonDaoFake, pokemonHttpFake, beanToEntityMapperFake, loggerNoOpSupplier)
             .play(POKEMON_OFFSET_TO_FETCH, POKEMON_LIMIT_TO_FETCH);
-    // No need to assert on internal details like Method interactions, as we can precisely assert
-    // data inserted via
-    // EntityAccessor
+    // No need to assert on internal details like Method interactions,
+    // as we can precisely assert data inserted via EntityAccessor
     assertThat(PokemonDaoFake.getDataInsertedViaEntityAccessor())
-        .containsExactlyInAnyOrderEntriesOf(AnyToAny.getMap(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY));
-    final var expectedResult = // Init DB records + New Pokemon from response
+        .containsExactlyInAnyOrderEntriesOf(tableToPokemonMap(Dud.getOrGenerateTableIfAbsent(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY, null, null, null)));
+    final var expectedResult = // Init DB records + New Pokémon from HTTP response
         MapsKt.plus(
-            AnyToAny.<String, String>getMap(INIT_DB_RECORDS_FAKE_KEY),
-            AnyToAny.getMap(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY));
+            tableToPokemonMap(Dud.getOrGenerateTableIfAbsent(INIT_DB_RECORDS_FAKE_KEY, null, null, null)),
+            tableToPokemonMap(Dud.getOrGenerateTableIfAbsent(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY, null, null, null)));
     assertThat(result).containsExactlyInAnyOrderEntriesOf(expectedResult);
   }
 
@@ -90,7 +89,7 @@ class PokemonCollectorTest {
     final var pokemonHttpFakeWithEmptyResponse =
         new PokemonHttpFake() {
           @Override
-          public List<String> fetchAllPokemon(int ignore1, int ignore2) {
+          public List<String> fetchAllPokemonNames(int ignore1, int ignore2) {
             return Collections.emptyList();
           }
         };
@@ -105,7 +104,7 @@ class PokemonCollectorTest {
   }
 
   @Test
-  @DisplayName("load from DB throws, no new pokemon inserted into DB")
+  @DisplayName("load from DB throws, no new Pokémon inserted into DB")
   void loadFromDbThrows() {
     final var entityAccessorThrowsOnLoadFromDb =
         new EntityAccessor() {

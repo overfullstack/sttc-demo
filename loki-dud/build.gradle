@@ -1,6 +1,8 @@
 dependencies {
     implementation(libs.apache.commons.lang3)
-    implementation(libs.guava)
+    api(libs.guava)
     api(libs.mockito.core)
+    api(libs.junit.jupiter)
+    testImplementation(libs.assertj.core)
     testImplementation(libs.bundles.kotest)
 }

@@ -22,6 +22,7 @@ object Utils {
   fun <R : Any, C : Any, V : Any> HashBasedTable<R, C, V>.computeIfAbsent(
     rowKey: R,
     colKey: C,
+    valueType: Class<*>? = null,
     mappingFunction: BiFunction<in R, in C, out V?>
   ): V? =
     if (!contains(rowKey, colKey)) {
@@ -31,6 +32,10 @@ object Utils {
       }
       newValue
     } else {
-      get(rowKey, colKey)
+      val presentValue = get(rowKey, colKey)
+      if (valueType?.isInstance(presentValue) == false) {
+        throw IllegalArgumentException("Data type mismatch! This fieldKey: $colKey already has a value: $presentValue stored with the data type: $valueType")
+      }
+      presentValue
     }
 }

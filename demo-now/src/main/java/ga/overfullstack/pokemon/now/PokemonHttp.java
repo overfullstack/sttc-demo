@@ -5,7 +5,7 @@ import java.util.List;
 
 /** This is an example for a module-specific Port & Adapter. */
 public interface PokemonHttp {
-  default List<String> fetchAllPokemon(int offset, int limit) {
+  default List<String> fetchAllPokemonNames(int offset, int limit) {
     return HttpUtil.fetchAllPokemonNames(offset, limit);
   }
 

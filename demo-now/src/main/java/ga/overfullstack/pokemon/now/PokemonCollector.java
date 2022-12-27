@@ -40,7 +40,7 @@ public class PokemonCollector {
 
     // Fetch all Pokémon
     final var fetchedPokemonNames =
-        pokemonHttp.fetchAllPokemon(pokemonOffsetToFetch, pokemonLimitToFetch);
+        pokemonHttp.fetchAllPokemonNames(pokemonOffsetToFetch, pokemonLimitToFetch);
     logger.info("Pokémon fetched: {}", fetchedPokemonNames);
 
     if (fetchedPokemonNames.isEmpty()) {
