@@ -18,6 +18,23 @@ object Dud {
     keyToTable.clear()
   }
 
+  /**
+   * NOTES
+   * Think of this entire dud as a canvas
+   * `dudKey` is like a sheet key
+   * Within a sheet your generated data can be a row or list of rows
+   * 
+   * There can be 4 operations:
+   * - Get
+   * - Put
+   * - Generate
+   * - Runtime Generate
+   * 
+   * ## Runtime Generate challenges
+   * - `dudkey` can be supplied in other operations but for `Runtime Generate` a key needs to be generated which is unique per test. So, the testName is used as the dudKey.
+   * - If multiple rows are inserted, need to make sure the same key is not overridden and instead we maintain some way to auto-increment
+   */
+
   private fun <T : Annotation> findFirstMethodWithAnnotationFromStackTrace(type: Class<T>): String =
     stackWalker.walk { stackFrames ->
       stackFrames.filter { stackFrame ->
