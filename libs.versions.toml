@@ -5,7 +5,7 @@ java-vavr = "0.10.4"
 kotlin-vavr = "0.10.2"
 jetbrains-annotations = "23.0.0"
 kover = "0.6.1"
-kotlin = "1.8.0-Beta"
+kotlin = "1.8.20-Beta"
 detekt = "1.22.0-RC2"
 kotest = "5.5.2"
 spotless = "6.11.0"
@@ -27,7 +27,7 @@ exposed = "0.40.1"
 apache-log4j = "2.19.0"
 postgresql = "42.5.0"
 mockito = "3.11.0" # Using old version to be compatible with PowerMock
-spring = "5.3.23"
+spring = "6.0.4"
 
 [libraries]
 hamcrest-core = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest-core" }

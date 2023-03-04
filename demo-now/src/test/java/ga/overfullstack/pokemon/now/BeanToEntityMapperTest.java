@@ -2,6 +2,7 @@ package ga.overfullstack.pokemon.now;
 
 import static ga.overfullstack.loki.fake.BeanName.ENTITY_ACCESSOR_LOKI_FAKE;
 import static ga.overfullstack.loki.fake.BeanName.LOGGER_NO_OP_SUPPLIER_LOKI;
+import static ga.overfullstack.pokemon.now.BeanToEntityMapper.UNKNOWN;
 
 import ga.overfullstack.legacy.LoadFromDBException;
 import ga.overfullstack.loki.adapter.EntityAccessor;
@@ -12,6 +13,7 @@ import ga.overfullstack.pokemon.now.PokemonCollector.Pokemon;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {LokiConfigForTest.class})
-class BeanToEntityMapperMapperTest {
+class BeanToEntityMapperTest {
 
   BeanToEntityMapper beanToEntityMapper;
 
@@ -44,13 +46,14 @@ class BeanToEntityMapperMapperTest {
   }
 
   @Test
-  void updateInDB() throws LoadFromDBException {
+  @DisplayName("When a required field is passed as null, replace with UNKNOWN")
+  void updateInDBWithRequiredFieldAsNull() throws LoadFromDBException {
     // Given
     final var pokemonBean = new Pokemon(null, "mockPower");
     // When
     final var pokemonEntity = beanToEntityMapper.insertInDB(pokemonBean);
     // Then
-    Assertions.assertEquals("", entityAccessorFake.get(pokemonEntity, "name"));
+    Assertions.assertEquals(UNKNOWN, entityAccessorFake.get(pokemonEntity, "name"));
     Assertions.assertEquals(pokemonBean.power(), entityAccessorFake.get(pokemonEntity, "power"));
   }
 }

@@ -1,5 +1,6 @@
 package ga.overfullstack.pokemon.now;
 
+import static ga.overfullstack.loki.BeanName.LOGGER_SUPPLIER_LOKI;
 import static ga.overfullstack.pokemon.now.Config.ENTITY_ACCESSOR_EXTENDED;
 
 import ga.overfullstack.legacy.Entity;
@@ -21,11 +22,12 @@ import org.springframework.stereotype.Component;
 class BeanToEntityMapper {
   private final EntityAccessor entityAccessor;
   private final Logger logger;
+  static final String UNKNOWN = "unknown";
 
   @Autowired
   BeanToEntityMapper(
       @Qualifier(ENTITY_ACCESSOR_EXTENDED) EntityAccessor entityAccessor,
-      LoggerSupplier loggerSupplier) {
+      @Qualifier(LOGGER_SUPPLIER_LOKI) LoggerSupplier loggerSupplier) {
     this.entityAccessor = entityAccessor;
     this.logger = loggerSupplier.supply();
   }
@@ -43,8 +45,8 @@ class BeanToEntityMapper {
           final var fieldName = destPair.getFirst();
           final boolean isFieldRequired = destPair.getSecond();
           if (isFieldRequired && sourceValue == null) {
-            logger.info("Required field {} is null, replacing with empty string", fieldName);
-            entityAccessor.put(pokemonEntity, fieldName, "");
+            logger.info("Required field {} is null, replacing with {}", fieldName, UNKNOWN);
+            entityAccessor.put(pokemonEntity, fieldName, UNKNOWN);
           } else {
             entityAccessor.put(pokemonEntity, fieldName, sourceValue);
           }

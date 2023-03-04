@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
  */
 class BeanToEntityMapper {
   private static final Logger LOGGER = LoggerFactory.getLogger(BeanToEntityMapper.class);
+  static final String UNKNOWN = "unknown";
   private static final Map<Function<Pokemon, String>, Pair<String, Boolean>> FIELD_MAPPINGS =
       Map.of( // FieldMapper, Pair(FieldName, isRequiredField)
           Pokemon::name, new Pair<>("name", true),
@@ -31,8 +32,8 @@ class BeanToEntityMapper {
           final var fieldName = destPair.getFirst();
           final boolean isFieldRequired = destPair.getSecond();
           if (isFieldRequired && sourceValue == null) {
-            LOGGER.info("Required field {} is null, replacing with empty string", fieldName);
-            pokemonEntity.put(fieldName, "");
+            LOGGER.info("Required field {} is null, replacing with {}", fieldName, UNKNOWN);
+            pokemonEntity.put(fieldName, UNKNOWN);
           }
           pokemonEntity.put(fieldName, sourceValue); // 🐞 should be in else block
         });

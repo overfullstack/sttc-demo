@@ -15,11 +15,6 @@ plugins {
   id("io.gitlab.arturbosch.detekt")
   id("com.adarshr.test-logger")
 }
-java {
-  toolchain {
-    languageVersion.set(JavaLanguageVersion.of(19))
-  }
-}
 version = "1.0.0"
 group = "ga.overfullstack"
 description = "sttc demo"
