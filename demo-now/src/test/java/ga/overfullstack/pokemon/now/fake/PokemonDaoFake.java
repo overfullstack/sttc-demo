@@ -39,7 +39,7 @@ public class PokemonDaoFake implements PokemonDao {
 
   @NotNull
   public static Map<String, String> getDataInsertedViaEntityAccessor() {
-    return MultiAnyToAny.<String, String, String>getCache().values().stream()
+    return MultiAnyToAny.<String, String, String>getRows().values().stream()
         .collect(toMap(table -> table.get("name"), table -> table.get("power")));
   }
 }

@@ -66,7 +66,7 @@ class PokemonCollectorTest {
   }
 
   @Test
-  @DisplayName("Collect Pokemon")
+  @DisplayName("Collect Pokémon")
   void collectPokemon() {
     final var result =
         new PokemonCollector(
@@ -77,7 +77,7 @@ class PokemonCollectorTest {
     // EntityAccessor
     assertThat(PokemonDaoFake.getDataInsertedViaEntityAccessor())
         .containsExactlyInAnyOrderEntriesOf(AnyToAny.getMap(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY));
-    final var expectedResult = // Init DB records + New Pokemon from response
+    final var expectedResult = // Init DB records + New Pokémon from response
         MapsKt.plus(
             AnyToAny.<String, String>getMap(INIT_DB_RECORDS_FAKE_KEY),
             AnyToAny.getMap(HTTP_RESPONSE_NEW_POKEMON_FAKE_KEY));
