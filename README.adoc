@@ -16,9 +16,26 @@ This figure depicts what this sample app does:
 
 image::pokemon-collector.png[Functionality, align="center"]
 
-. Fetch Pokémon info from the store with HTTP call
-. Query Pokémon present in the DB and compare them with the fetched ones from the store
-. If there is a diff found, insert the new Pokémon into the DB
+. HTTP call to a Pokémon Store to fetch random Pokémon names.
+. It uses those names to query the DB and deduces matching and missing Pokémon in the DB.
+. It then fetches powers for those missing Pokémon from the Store via HTTP and inserts them in the DB.
+
+It uses *postgresql* for DB. `powers` is the only table in this DB with this simple schema:
+
+image::powers.jpg[DB Schema, align="center"]
+
+== Module Dependency
+
+This miniature is a multi-module project, that comprises 5 modules:
+
+* `demo-before` — demos predominant coding and testing practices on the Core that makes unit-testing difficult
+* `demo-now` — demos the solution to organically improve unit-test coverage
+* `legacy` — This simulates legacy core modules. Assume you don’t have control over refactoring this module.
+* `loki` — A simulated Loki module
+* `loki-dud` — A simulated Dud module that contains Fakes
+
+image::demo-before.png[Demo before, align="center"]
+image::demo-now.png[Demo now, align="center"]
 
 == See in Action
 
