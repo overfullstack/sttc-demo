@@ -14,11 +14,11 @@
         "minor",
         "patch"
       ],
+      "excludePackageNames": [
+        "org.mockito:mockito-core"
+      ],
       "groupName": "all dependencies",
       "groupSlug": "all"
     }
-  ],
-  "excludePackageNames": [
-    "org.mockito:mockito-core:3.11.0"
   ]
 }

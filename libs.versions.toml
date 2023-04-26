@@ -5,18 +5,17 @@ java-vavr = "0.10.4"
 kotlin-vavr = "0.10.2"
 jetbrains-annotations = "23.0.0"
 kover = "0.6.1"
-kotlin = "1.8.20-Beta"
+kotlin = "1.8.21"
 detekt = "1.22.0-RC2"
 kotest = "5.5.2"
 spotless = "6.11.0"
 spotbugs = "5.0.13"
 testLogger = "3.2.0"
 assertj-core = "3.23.1"
-assertj-vavr = "0.4.2"
 slf4j-api = "2.0.3"
 log4j-slf4j18-impl = "2.18.0"
 reflection-util = "2.14.0"
-jupiter = "5.9.1"
+junit = "5.9.3"
 guava = "31.1-jre"
 apache-commons-lang3 = "3.12.0"
 apache-commons-collections4 = "4.4"
@@ -49,8 +48,8 @@ kotest-runnerJUnit5 = { module = "io.kotest:kotest-runner-junit5", version.ref =
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j-api" }
 log4j-slf4j18-impl = { module = "org.apache.logging.log4j:log4j-slf4j18-impl", version.ref = "log4j-slf4j18-impl" }
-junit-bom = { module = "org.junit:junit-bom", version.ref = "jupiter" }
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jupiter" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 apache-commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "apache-commons-lang3" }
