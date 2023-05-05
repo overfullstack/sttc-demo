@@ -65,9 +65,9 @@ immutables-value-annotations = { module = "org.immutables:value-annotations", ve
 exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
 exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
 exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
-log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "apache-log4j" }
 log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "apache-log4j" }
 log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "apache-log4j" }
+log4j-slf4j2-impl = { module = "org.apache.logging.log4j:log4j-slf4j2-impl", version.ref = "apache-log4j" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 spring-core = { module = "org.springframework:spring-core", version.ref = "spring" }
@@ -83,7 +83,7 @@ kotest = [
 ]
 junit = ["junit-jupiter", "junit-engine"]
 exposed = ["exposed-core", "exposed-dao", "exposed-jdbc"]
-apache-log4j = ["log4j-slf4j-impl", "log4j-api", "log4j-core"]
+apache-log4j = ["log4j-api", "log4j-core", "log4j-slf4j2-impl"]
 spring = ["spring-core", "spring-context"]
 
 [plugins]
