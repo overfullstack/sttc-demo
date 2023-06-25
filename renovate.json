@@ -6,16 +6,13 @@
   "commitBodyTable": true,
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "*"
+      "excludePackageNames": [
+        "org.mockito:mockito-core"
       ],
       "matchUpdateTypes": [
         "major",
         "minor",
         "patch"
-      ],
-      "excludePackageNames": [
-        "org.mockito:mockito-core"
       ],
       "groupName": "all dependencies",
       "groupSlug": "all"
