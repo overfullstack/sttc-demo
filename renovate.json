@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "excludePackagePatterns": [
-        "^mockito-core"
+        "^org.mockito:mockito-core"
       ],
       "matchPackagePatterns" : [
         "*"
