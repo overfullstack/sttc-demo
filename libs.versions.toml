@@ -14,7 +14,7 @@ moshix = "1.7.20-Beta-0.18.3"
 immutables = "2.9.3"
 exposed = "0.41.1"
 postgresql = "42.6.0"
-mockito = "3.12.4" # Using old version to be compatible with PowerMock
+mockito = "5.4.0" # Using old version to be compatible with PowerMock
 spring = "6.0.9"
 
 # Common dependencies
