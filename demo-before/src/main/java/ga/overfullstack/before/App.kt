@@ -16,12 +16,14 @@ import org.http4k.server.asServer
 fun main() {
   val app: HttpHandler = { request ->
     val resultLens = Body.auto<Map<String, String>>().toLens()
-    Response(Status.OK).with(
-      resultLens of PokemonCollector.play(
-        request.query("offset")?.toInt() ?: POKEMON_OFFSET_TO_FETCH,
-        request.query("limit")?.toInt() ?: POKEMON_LIMIT_TO_FETCH
+    Response(Status.OK)
+      .with(
+        resultLens of
+          PokemonCollector.play(
+            request.query("offset")?.toInt() ?: POKEMON_OFFSET_TO_FETCH,
+            request.query("limit")?.toInt() ?: POKEMON_LIMIT_TO_FETCH
+          )
       )
-    )
   }
   app.asServer(SunHttp(7000)).start()
 }

@@ -19,13 +19,14 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.update
 
 object DBUtil {
-  private val INIT_DATA = listOf(
-    "pikachu" to "static",
-    "bulbasaur" to "chlorophyll",
-    "charmeleon" to "blaze",
-    "squirtle" to "torrent",
-    "eevee" to "adaptability"
-  )
+  private val INIT_DATA =
+    listOf(
+      "pikachu" to "static",
+      "bulbasaur" to "chlorophyll",
+      "charmeleon" to "blaze",
+      "squirtle" to "torrent",
+      "eevee" to "adaptability"
+    )
 
   init { // Singleton
     Database.connect(
@@ -46,21 +47,18 @@ object DBUtil {
   @JvmStatic
   fun queryFromPokemon(pokemonId: EntityID<Int>, fieldName: String): String? =
     fieldStrToColumn(fieldName)?.let { fieldCol ->
-      transaction {
-        Powers.select { Powers.id eq pokemonId }.single()[fieldCol as Column<String>]
-      }
+      transaction { Powers.select { Powers.id eq pokemonId }.single()[fieldCol as Column<String>] }
     }
 
   @JvmStatic
-  fun queryPokemonPowers(pokemonNames: List<String>): Map<String?, String?> = if (pokemonNames.isNotEmpty()) {
-    transaction {
-      Powers.selectAll()
-        .andWhere { name inList pokemonNames }
-        .associate { it[name] to it[power] }
+  fun queryPokemonPowers(pokemonNames: List<String>): Map<String?, String?> =
+    if (pokemonNames.isNotEmpty()) {
+      transaction {
+        Powers.selectAll().andWhere { name inList pokemonNames }.associate { it[name] to it[power] }
+      }
+    } else {
+      emptyMap()
     }
-  } else {
-    emptyMap()
-  }
 
   @JvmStatic
   fun queryAllPokemonWithPowers(): Map<String?, String?> = transaction {
@@ -78,29 +76,19 @@ object DBUtil {
   @JvmStatic
   fun updatePokemon(id: EntityID<Int>, field: String, value: String) =
     fieldStrToColumn(field)?.let { fieldCol ->
-      transaction {
-        Powers.update({ Powers.id eq id }) {
-          it[fieldCol as Column<String>] = value
-        }
-      }
+      transaction { Powers.update({ Powers.id eq id }) { it[fieldCol as Column<String>] = value } }
     }
 
   @JvmStatic
   fun updatePokemon(id: EntityID<Int>, fieldValue: Map<String, String>) =
     fieldValue.entries.forEach { (field, value) -> updatePokemon(id, field, value) }
 
-  @JvmStatic
-  fun createAndGetId() = transaction {
-    Powers.insertAndGetId {
-      it[name] = ""
-    }
-  }
+  @JvmStatic fun createAndGetId() = transaction { Powers.insertAndGetId { it[name] = "" } }
 
   object Powers : IntIdTable() {
     val name = varchar("name", 50)
     val power = varchar("power", 50).nullable()
 
-    @JvmStatic
-    fun fieldStrToColumn(field: String) = columns.find { col -> col.name == field }
+    @JvmStatic fun fieldStrToColumn(field: String) = columns.find { col -> col.name == field }
   }
 }

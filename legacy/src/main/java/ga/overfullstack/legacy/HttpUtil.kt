@@ -17,11 +17,12 @@ object HttpUtil {
   fun fetchAllPokemonNames(offset: Int, limit: Int): List<String> {
     val resultsLens = Body.auto<Results>().toLens()
     val pokemonApi = ClientFilters.SetBaseUriFrom(Uri.of(POKE_BASE_URI)).then(JavaHttpClient())
-    val response: Response = pokemonApi(
-      Request(Method.GET, "pokemon")
-        .query("offset", offset.toString())
-        .query("limit", limit.toString())
-    )
+    val response: Response =
+      pokemonApi(
+        Request(Method.GET, "pokemon")
+          .query("offset", offset.toString())
+          .query("limit", limit.toString())
+      )
     return resultsLens(response).results.map { it.name }
   }
 
@@ -34,8 +35,12 @@ object HttpUtil {
   }
 
   private data class Pokemon(val name: String)
+
   private data class Results(val results: List<Pokemon>)
+
   private data class Ability(val name: String)
+
   private data class AbilityWrapper(val ability: Ability)
+
   private data class Abilities(val abilities: List<AbilityWrapper>)
 }
