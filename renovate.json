@@ -6,8 +6,11 @@
   "commitBodyTable": true,
   "packageRules": [
     {
-      "excludePackageNames": [
-        "org.mockito:mockito-core"
+      "excludePackagePatterns": [
+        "^mockito-core"
+      ],
+      "matchPackagePatterns" : [
+        "*"
       ],
       "matchUpdateTypes": [
         "major",
