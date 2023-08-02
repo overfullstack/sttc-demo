@@ -4,7 +4,7 @@ import io.gitlab.arturbosch.detekt.report.ReportMergeTask
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-  java
+  id(libs.plugins.kover.pluginId)
   id(libs.plugins.detekt.pluginId) apply false
 }
 allprojects {
@@ -13,6 +13,7 @@ allprojects {
     mavenCentral()
   }
 }
+koverReport { defaults { html { onCheck = true } } }
 val detektReportMerge by tasks.registering(ReportMergeTask::class) {
   output.set(rootProject.buildDir.resolve("reports/detekt/merge.xml"))
 }

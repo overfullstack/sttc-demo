@@ -1,17 +1,10 @@
-import com.adarshr.gradle.testlogger.theme.ThemeType
+import com.adarshr.gradle.testlogger.theme.ThemeType.MOCHA
+import com.diffplug.spotless.LineEnding.PLATFORM_NATIVE
 import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep.XML
-import io.gitlab.arturbosch.detekt.Detekt
-import io.gitlab.arturbosch.detekt.DetektPlugin
-import io.gitlab.arturbosch.detekt.extensions.DetektExtension
-import io.gitlab.arturbosch.detekt.report.ReportMergeTask
-import kotlinx.kover.api.DefaultJacocoEngine
-import kotlinx.kover.api.KoverTaskExtension
 
 plugins {
   java
-  idea
   id("com.diffplug.spotless")
-  id("org.jetbrains.kotlinx.kover")
   id("io.gitlab.arturbosch.detekt")
   id("com.adarshr.test-logger")
 }
@@ -32,29 +25,31 @@ koverMerged {
   }
 }
 spotless {
+  lineEndings = PLATFORM_NATIVE
   kotlin {
-    target("src/main/java/**/*.kt", "src/test/java/**/*.kt")
-    targetExclude("$buildDir/generated/**/*.*")
-    ktlint()
-      .setUseExperimental(true)
-      .editorConfigOverride(mapOf("indent_size" to "2", "continuation_indent_size" to "2"))
+    ktfmt().googleStyle()
+    target("**/*.kt")
+    trimTrailingWhitespace()
+    endWithNewline()
+    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**")
   }
   kotlinGradle {
-    target("*.gradle.kts")
-    ktlint()
-      .setUseExperimental(true)
-      .editorConfigOverride(mapOf("indent_size" to "2", "continuation_indent_size" to "2"))
+    ktfmt().googleStyle()
+    target("**/*.gradle.kts")
+    trimTrailingWhitespace()
+    endWithNewline()
+    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**")
   }
   java {
     toggleOffOn()
-    target("src/main/java/**/*.java", "src/test/java/**/*.java")
-    targetExclude("$buildDir/generated/**/*.*")
+    target("**/*.java")
     importOrder()
     removeUnusedImports()
     googleJavaFormat()
     trimTrailingWhitespace()
     indentWithSpaces(2)
     endWithNewline()
+    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**")
   }
   format("xml") {
     targetExclude("pom.xml")
@@ -74,11 +69,5 @@ detekt {
   baseline = file("$rootDir/detekt/baseline.xml")
   config = files("$rootDir/detekt/detekt.yml")
 }
-tasks {
-  test {
-    extensions.configure(KoverTaskExtension::class) {
-      isEnabled = true
-    }
-  }
-  testlogger.theme = ThemeType.MOCHA
-}
+testlogger.theme = MOCHA_PARALLEL
+
