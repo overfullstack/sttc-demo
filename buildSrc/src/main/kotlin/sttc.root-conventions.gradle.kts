@@ -24,14 +24,14 @@ spotless {
     target("**/*.kt")
     trimTrailingWhitespace()
     endWithNewline()
-    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**")
+    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**", "**/out/**")
   }
   kotlinGradle {
     ktfmt().googleStyle()
     target("**/*.gradle.kts")
     trimTrailingWhitespace()
     endWithNewline()
-    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**")
+    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**", "**/out/**")
   }
   java {
     toggleOffOn()
@@ -42,7 +42,7 @@ spotless {
     trimTrailingWhitespace()
     indentWithSpaces(2)
     endWithNewline()
-    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**")
+    targetExclude("**/build/**", "**/.gradle/**", "**/generated/**", "**/bin/**", "**/out/**")
   }
   format("xml") {
     targetExclude("pom.xml")
