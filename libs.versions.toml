@@ -15,7 +15,7 @@ immutables = "2.10.0"
 exposed = "0.44.1"
 postgresql = "42.6.0"
 mockito = "3.12.4" # Using old version to be compatible with PowerMock
-spring = "6.0.13"
+spring = "6.1.0"
 
 # Common dependencies
 junit = "5.10.1"
