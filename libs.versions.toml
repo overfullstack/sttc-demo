@@ -13,7 +13,7 @@ http4k = "5.10.5.0"
 moshix = "1.7.20-Beta-0.18.3"
 immutables = "2.10.0"
 exposed = "0.45.0"
-postgresql = "42.7.0"
+postgresql = "42.7.1"
 mockito = "3.12.4" # Using old version to be compatible with PowerMock
 spring = "6.1.1"
 
